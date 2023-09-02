@@ -1,7 +1,7 @@
 <?php
 	$inData = getRequestInfo();
 	
-	$color = $inData["color"];
+	$user = $inData["user"];
 	$userId = $inData["userId"];
 
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
@@ -12,7 +12,7 @@
 	else
 	{
 		$stmt = $conn->prepare("INSERT into Users (UserId,Name) VALUES(?,?)");
-		$stmt->bind_param("ss", $userId, $color);
+		$stmt->bind_param("ss", $userId, $user);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();
