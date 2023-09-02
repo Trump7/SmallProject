@@ -1,21 +1,36 @@
 <?php
 	$inData = getRequestInfo();
-	
-	$color = $inData["color"];
+
+	// Extract variables from the request payload
+	$Phone = $inData["Phone"];
+	$Email = $inData["Email"];
+	$Name = $inData["Name"];
 	$userId = $inData["userId"];
 
-	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
-	if ($conn->connect_error) 
+	// Initialize database connection
+	$conn = new mysqli("localhost", "TheBeast", "Torino72", "COP4331");
+
+	// Check for connection error
+	if ($conn->connect_error)
 	{
 		returnWithError( $conn->connect_error );
-	} 
+	}
 	else
 	{
-		$stmt = $conn->prepare("INSERT into Colors (UserId,Name) VALUES(?,?)");
-		$stmt->bind_param("ss", $userId, $color);
+		// Prepare SQL statement for inserting data
+		$stmt = $conn->prepare("INSERT into Contacts (UserId, Name, Email, Phone) VALUES (?, ?, ?, ?)");
+
+		// Bind the variables to the SQL statement
+		$stmt->bind_param("ssss", $userId, $Name, $Email, $Phone);
+
+		// Execute the SQL statement
 		$stmt->execute();
+
+		// Close the statement and connection
 		$stmt->close();
 		$conn->close();
+
+		// Return without any error
 		returnWithError("");
 	}
 
