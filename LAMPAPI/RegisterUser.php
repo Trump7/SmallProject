@@ -1,8 +1,10 @@
 <?php
 	$inData = getRequestInfo();
 	
-	$use = $inData["user"];
-	$userId = $inData["userId"];
+	$firstName = $inData["FirstName"];
+	$lastName = $inData["LastName"];
+	$login =  $inData["Login"];
+	$password = $inData["Password"];
 
 	$conn = new mysqli("localhost", "APIMan", "WeLoveAPIMan", "COP4331");
 	if ($conn->connect_error) 
@@ -11,8 +13,8 @@
 	} 
 	else
 	{
-		$stmt = $conn->prepare("INSERT into Users (UserId,Name) VALUES(?,?)");
-		$stmt->bind_param("ss", $userId, $user);
+		$stmt = $conn->prepare("INSERT into Users (FirstName, LastName, Login, Password) VALUES(?,?,?,?)");
+		$stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();
