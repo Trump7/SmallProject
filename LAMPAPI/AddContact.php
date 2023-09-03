@@ -8,7 +8,7 @@
 	$userId = $inData["userId"];
 
 	// Initialize database connection
-	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
+	$conn = new mysqli("localhost", "APIMan", "WeLoveAPIMan", "COP4331"); 	
 
 	// Check for connection error
 	if ($conn->connect_error)
