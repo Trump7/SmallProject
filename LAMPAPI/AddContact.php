@@ -18,10 +18,10 @@
 	else
 	{
 		// Prepare SQL statement for inserting data
-		$stmt = $conn->prepare("INSERT into Contacts (UserId, Name, Email, Phone) VALUES (?, ?, ?, ?)");
+		$stmt = $conn->prepare("INSERT into Contacts (userId, name, email, phone) VALUES (?, ?, ?, ?)");
 
 		// Bind the variables to the SQL statement
-		$stmt->bind_param("ssss", $userId, $Name, $Email, $Phone);
+		$stmt->bind_param("ssss", $userId, $name, $email, $phone);
 
 		// Execute the SQL statement
 		$stmt->execute();
