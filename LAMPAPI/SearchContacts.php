@@ -13,7 +13,7 @@
 	else
 	{
 		// add code to allow for serches of email & phone at later time
-		$stmt = $conn->prepare("select * from Contacts where (FirstName like ? OR LastName like ?) and UserID=?");
+		$stmt = $conn->prepare("select * from Contacts where (Name like ?) and UserID=?");
 		//change to contactName
 		$colorName = "%" . $inData["search"] . "%";
 		$stmt->bind_param("sss", $colorName, $colorName, $inData["UserID"]);
@@ -30,7 +30,7 @@
 			$searchCount++;
 			//Delete this line after getting api to work
 			//$searchResults .= '"' . $row["FirstName"] . '"';
-			$searchResults .= '{"FirstName" : "' . $row["FirstName"]. '", "LastName" : "' . $row["LastName"]. '", "Phone" : "' . $row["Phone"]. '", "Email" : "' . $row["Email"]. '"}';
+			$searchResults .= '{"Name" : "' . $row["Name"]. '", "Phone" : "' . $row["Phone"]. '", "Email" : "' . $row["Email"]. '"}';
 		}
 		
 		if( $searchCount == 0 )
