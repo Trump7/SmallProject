@@ -5,8 +5,7 @@
 	$phone = $inData["Phone"];
 	$email = $inData["Email"];
 	$name = $inData["Name"];
-	$userId = $inData["UserID"];
-  $id = $inData["ID"];
+  	$id = $inData["ID"];
 
 	// Initialize database connection
 	$conn = new mysqli("localhost", "APIMan", "WeLoveAPIMan", "COP4331"); 	
