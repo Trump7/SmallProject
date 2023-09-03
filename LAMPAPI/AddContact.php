@@ -2,9 +2,9 @@
 	$inData = getRequestInfo();
 
 	// Extract variables from the request payload
-	$Phone = $inData["Phone"];
-	$Email = $inData["Email"];
-	$Name = $inData["Name"];
+	$phone = $inData["Phone"];
+	$email = $inData["Email"];
+	$name = $inData["Name"];
 	$userId = $inData["userId"];
 
 	// Initialize database connection
