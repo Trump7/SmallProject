@@ -28,6 +28,7 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
+			//Delete this line after getting api to work
 			//$searchResults .= '"' . $row["FirstName"] . '"';
 			$searchResults .= '{"FirstName" : "' . $row["FirstName"]. '", "LastName" : "' . $row["LastName"]. '", "Phone" : "' . $row["Phone"]. '", "Email" : "' . $row["Email"]. '"}';
 		}
