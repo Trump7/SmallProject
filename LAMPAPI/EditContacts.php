@@ -18,7 +18,7 @@
 	else
 	{
 		// Prepare SQL statement for inserting data
-		$stmt = $conn->prepare("UPDATE Contacts SET Name = ?, SET Phone = ?, Set Email = ? WHERE ID = ?");
+		$stmt = $conn->prepare("UPDATE Contacts SET Name = ?, Phone = ?, Email = ? WHERE ID = ?");
 		returnWithError("hvjadbjhvjhv");
 
 		// Bind the variables to the SQL statement
