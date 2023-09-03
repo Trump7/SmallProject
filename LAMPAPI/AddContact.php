@@ -5,7 +5,7 @@
 	$phone = $inData["Phone"];
 	$email = $inData["Email"];
 	$name = $inData["Name"];
-	$userId = $inData["UserId"];
+	$userId = $inData["UserID"];
 
 	// Initialize database connection
 	$conn = new mysqli("localhost", "APIMan", "WeLoveAPIMan", "COP4331"); 	
@@ -18,7 +18,7 @@
 	else
 	{
 		// Prepare SQL statement for inserting data
-		$stmt = $conn->prepare("INSERT into Contacts (UserId, Name, Email, Phone) VALUES (?, ?, ?, ?)");
+		$stmt = $conn->prepare("INSERT into Contacts (UserID, Name, Email, Phone) VALUES (?, ?, ?, ?)");
 
 		// Bind the variables to the SQL statement
 		$stmt->bind_param("ssss", $userId, $name, $email, $phone);
