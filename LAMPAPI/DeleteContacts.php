@@ -15,7 +15,7 @@
 	else
 	{
 		// Prepare SQL statement for inserting data
-		$stmt = $conn->prepare("DELETE FROM Contacts (ID) VALUES (?)");
+		$stmt = $conn->prepare("DELETE FROM Contacts WHERE ID = ?");
 
 		// Bind the variables to the SQL statement
 		$stmt->bind_param("s", $id);
