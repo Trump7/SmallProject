@@ -18,7 +18,7 @@
 	else
 	{
 		// Prepare SQL statement for inserting data
-		$stmt = $conn->prepare("UPDATE Contacts" . "SET Phone = $phone" . "Set Email = $email" . "Set Name = $name" . "WHERE emp_id = $emp_id");
+		$stmt = $conn->prepare("UPDATE Contacts" . "SET Phone = $phone" . "Set Email = $email" . "Set Name = $name" . "WHERE ID = $id");
 
 		// Bind the variables to the SQL statement
 		$stmt->bind_param("sssi", $phone, $email, $name, $id);
