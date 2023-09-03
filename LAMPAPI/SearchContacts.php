@@ -16,7 +16,7 @@
 		$stmt = $conn->prepare("select * from Contacts where (Name like ?) and UserID=?");
 		//change to contactName
 		$colorName = "%" . $inData["search"] . "%";
-		$stmt->bind_param("sss", $colorName, $colorName, $inData["UserID"]);
+		$stmt->bind_param("ss", $colorName, $inData["UserID"]);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
