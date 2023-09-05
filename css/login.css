@@ -1,0 +1,125 @@
+body{
+	background-image: url('../images/background.jpg');
+	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%,  transparent 100%);
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+	margin-top: -28px;
+	margin-left: 0px;
+	padding: 0px;
+}
+
+header{
+	width: 100%;
+	height: 100px;
+	background: #99dfe6;
+	position: fixed;
+	border-bottom: 2px solid #000000;
+	border-radius: 0 0 10px 10px;
+}
+
+.navbar{
+	display: flex; /* Creating the box affect for navigation order */
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin: 0px auto;
+	padding: 0 20px;
+	height: 100px;
+}
+
+.logo img{
+	float: left;
+    max-height: 100px;
+    max-width: 100%;
+}
+
+nav ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+}
+
+nav li{
+	margin: 0 10px;
+}
+
+nav a{
+	font-weight: bold;
+	padding: 15px 20px;  /*Space between text and border Y,X*/
+	border: 2px solid #000000; /*Border around buttons*/
+	border-radius: 5px; /*Round corners*/
+	color: #000000; /*Font color on buttons*/
+	margin-right: 30px; /*How far buttons are from right*/
+	text-decoration: none; /*No underline*/
+	background-color: #f8db6e; /*button background color*/
+}
+
+nav a.button{
+	background-color: #000000; /*button color for selectable webpage*/
+}
+
+nav a.active{
+	background-color: #000000; /*button color for active webpage*/
+}
+
+nav a:hover{
+	background-color: #ffe249; /*button color when mouse hovers over*/
+}
+
+#loginDiv{
+	margin-top: 130px;
+	margin-left: 23%;
+	font-size: 15px;
+	width: 50%;
+	padding: 25px;
+	background-color: white;
+	box-shadow: 15px 15px 20px 4px;
+}
+
+#loginName{
+	font-size: 20px;
+}
+
+#loginPassword{
+	font-size: 20px;
+}
+
+input[type="text"], input[type="password"]{
+	border-radius: 0px;
+	text-align: center;
+	width: 60%;
+	margin-left: 125px;
+	margin-bottom: 2%;
+	font-family: serif;
+}
+
+.buttons{
+	font-size: 16px;
+	border-radius: 5px;
+	width: 15%;
+	margin-top: 10px;
+	margin-left: 42%;
+	font-family: serif;
+	color: black;
+	background-color: lightcyan;
+}
+
+#inner-title{
+	display: inline-block;
+	font-size: 25px;
+	width: 90%;
+	text-align: center;
+	margin-left: 5%;
+	margin-bottom: 5%;
+	font-family: initial;
+	color: darkturquoise;
+}
+input[type="checkbox"]{
+	margin-left: 125px;
+	margin-bottom: 2%;
+	font-family: serif;
+	font-size: 15px;
+}
