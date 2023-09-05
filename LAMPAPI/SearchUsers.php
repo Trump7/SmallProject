@@ -26,7 +26,7 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= "Password : " . $row["Password"];
+			$searchResults .= '{"Password" : "' . $row["Password"] . '"}';
 		}
 		
 		if( $searchCount == 0 )
