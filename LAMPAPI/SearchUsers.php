@@ -12,8 +12,6 @@
 	} 
 	else
 	{
-		// $stmt = $conn->prepare("SELECT * FROM Users WHERE Login= ?");
-		// $stmt->bind_param("s", $inData["login"]);
 		$stmt = $conn->prepare("SELECT * FROM Users WHERE Login = ?");
 		$stmt->bind_param("s", $inData["Login"]);
 		$stmt->execute();
@@ -52,14 +50,12 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
-		sendResultInfoAsJson( $retValue );
+		sendResultInfoAsJson($err);
 	}
 	
 	function returnWithInfo( $searchResults )
 	{
-		$retValue = '{"results":[' . $searchResults . '],"error":""}';
-		sendResultInfoAsJson( $retValue );
+		sendResultInfoAsJson($searchResults);
 	}
 	
 ?>
