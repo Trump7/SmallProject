@@ -12,30 +12,27 @@
 	} 
 	else
 	{
-		$stmt = $conn->prepare("select * from Users where Login like ?");
-		$login = "%" . $inData["Login"] . "%";
-		$stmt->bind_param("s", $login);
+		// $stmt = $conn->prepare("SELECT * FROM Users WHERE Login= ?");
+		// $stmt->bind_param("s", $inData["login"]);
+		$stmt = $conn->prepare("SELECT * FROM Users WHERE Login = ?");
+		$stmt->bind_param("s", $inData["Login"]);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
-		
+
+		// checks for username
 		while($row = $result->fetch_assoc())
 		{
-			if( $searchCount > 0 )
-			{
-				$searchResults .= ",";
-			}
 			$searchCount++;
-			$searchResults .= '{"Password" : "' . $row["Password"] . '"}';
 		}
 		
-		if( $searchCount == 0 )
+		if($searchCount == 0)
 		{
-			returnWithError( "No Records Found" );
+			returnWithError("No Matching Login");
 		}
 		else
 		{
-			returnWithInfo( $searchResults );
+			returnWithInfo($searchResults);
 		}
 		
 		$stmt->close();
