@@ -26,11 +26,11 @@
 		
 		if($searchCount == 0)
 		{
-			returnWithError("No Matching Login");
+			returnWithError('{"No Matching Login"}');
 		}
 		else
 		{
-			returnWithInfo("Login found");
+			returnWithInfo('{"Login found"}');
 		}
 		
 		$stmt->close();
