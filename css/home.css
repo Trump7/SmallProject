@@ -32,13 +32,13 @@ header{
 
 .logo img{
     max-height: 100px;
-    max-width: 100%;
+    width: auto;
 }
 
 .title{
 	font-family: 'Boogaloo', cursive;
-	font-size: 24px;
-	margin-right: 660px;
+	font-size: 20px;
+	flex-grow: 1;
 	text-shadow: 2px 2px 0 #000;
 	color: #f8db6e;
 }
@@ -57,6 +57,7 @@ header{
 	font-size: 72px;
 	text-shadow: 2px 2px 0 #000;
 	color: #FFFFFF;
+	text-decoration: none;
 }
 
 nav ul{
@@ -67,7 +68,7 @@ nav ul{
 }
 
 nav li{
-	margin: 0 10px;
+	margin: 0 7px;
 }
 
 nav a{
@@ -76,7 +77,6 @@ nav a{
 	border: 2px solid #000000; /*Border around buttons*/
 	border-radius: 5px; /*Round corners*/
 	color: #000000; /*Font color on buttons*/
-	margin-right: 30px; /*How far buttons are from right*/
 	text-decoration: none; /*No underline*/
 	background-color: #f8db6e; /*button background color*/
 }
