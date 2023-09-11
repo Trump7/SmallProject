@@ -60,6 +60,14 @@ header{
 	text-decoration: none;
 }
 
+.slogansub{
+	font-family: 'Boogaloo', cursive;
+	font-size: 26px;
+	text-shadow: 2px 2px 0 #000;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
 nav ul{
 	list-style: none;
 	padding: 0;
