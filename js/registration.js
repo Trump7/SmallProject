@@ -8,7 +8,7 @@ function registerUser() {
     let lastName = document.getElementById("registerLastName").value;
     let login = document.getElementById("registerUsername").value;
     let password = document.getElementById("registerPassword").value;
-	let confirmpassword = document.getElementById("comfirmPassword").value;
+	let confirmpassword = document.getElementById("confirmPassword").value;
 
     // Validate user input
     if (!isValidName(firstName)){
