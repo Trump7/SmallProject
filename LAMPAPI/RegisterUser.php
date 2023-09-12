@@ -18,7 +18,7 @@
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();
-		returnWithInfo("{Success}");
+		returnWithInfo('{"Success" : "Account Created"}');
 	}
 
 	function getRequestInfo()
