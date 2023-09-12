@@ -10,6 +10,8 @@ function registerUser() {
     let password = document.getElementById("registerPassword").value;
 	let confirmpassword = document.getElementById("confirmPassword").value;
 
+	document.getElementById("registerResult").innerHTML = "";
+
     // Validate user input
     if (!isValidName(firstName)){
         document.getElementById("registerResult").innerHTML = "Invalid first name. Letters only.";
@@ -31,25 +33,32 @@ function registerUser() {
         return;
     }
 	
-	document.getElementById("registerResult").innerHTML = "";
-	
 	//if the user is not available it will stop here
 	//if it is available, it will create the account
-	checkUserAvailable(login).then(() => {
-		return createUser(firstName, lastName, login, password);
-	}).then(() => {
-		//after creating the account if there were no errors, a success message will be displayed
-		document.getElementById("registerResult").innerHTML = "The account has been successfully created! Redirecting to login...";
-		//after getting the success message it will wait a few seconds and redirect to the login page
-		setTimeout(() => {
-			window.location.href = "login.html";
-		}, 4000);
-	}).catch((err) => {
-		document.getElementById("registerResult").innerHTML = err.message;
+	checkUserAvailable(login, function(userAvailable){
+		if(userAvailable){
+			createUser(firstName, lastName, login, password, function(regResult){
+				if(regResult == "true"){
+					//after creating the account if there were no errors, a success message will be displayed
+					document.getElementById("registerResult").innerHTML = "The account has been successfully created! Redirecting to login...";
+					//after getting the success message it will wait a few seconds and redirect to the login page
+					setTimeout(() => {
+						window.location.href = "login.html";
+					}, 4000);
+				}
+				else{
+					document.getElementById("registerResult").innerHTML = "Error: " + regResult;
+				}
+			});
+		}
+		else{
+			document.getElementById("registerResult").innerHTML = "User has already been taken";
+		}
 	});
-}
+}	
 
-function checkUserAvailable(username) {
+
+function checkUserAvailable(username, result) {
 	let data = {login: username};
 	let jsonPayload = JSON.stringify(data);
 	
@@ -64,11 +73,13 @@ function checkUserAvailable(username) {
 			if(this.readyState == 4 && this.status == 200){
 				let response = JSON.parse(xhr.responseText);
 				
-				if("error" in response){
-					//username is taken
-					document.getElementById("registerResult").innerHTML = "User has already been taken";
-					return;
+				if("No Matching Login" in response){
+					result(true);
 				}
+				else{
+					//username is taken
+					result(false);
+				}	
 			}
 		};
 		xhr.send(jsonPayload);
@@ -78,7 +89,7 @@ function checkUserAvailable(username) {
 	}
 }
 
-function createUser(first, last, user, pass){
+function createUser(first, last, user, pass, result){
 	let data = {firstName: first, lastName: last, login: user, password: pass};
 	let jsonPayload = JSON.stringify(data);
 	
@@ -94,8 +105,11 @@ function createUser(first, last, user, pass){
 				let response = JSON.parse(xhr.responseText);
 				
 				if("error" in response){
-					document.getElementById("registerResult").innerHTML = "There was an error creating the account";
-					return;
+					//registration failed
+					result("error creating account");
+				}
+				else{
+					result("true");
 				}
 			}
 		};
