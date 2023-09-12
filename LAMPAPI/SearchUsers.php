@@ -20,8 +20,6 @@
 		
 		$result = $stmt->get_result();
 		
-		print "sssssss";
-		
 		// checks for username
 		while($row = $result->fetch_assoc())
 		{
@@ -34,10 +32,7 @@
 		}
 		else
 		{
-			print $login;
-			// print " ";
-			// print $result->fetch_assoc();
-			returnWithInfo('ok');
+			returnWithInfo($login);
 		}
 		
 		$stmt->close();
