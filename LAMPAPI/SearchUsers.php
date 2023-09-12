@@ -60,7 +60,7 @@
 
 	function returnWithInfo($info)
 	{
-		$retValue = '{“success”:' . $info . '“}"';
+		$retValue .= '{“Success” : ' . $info . '“}"';
 		sendResultInfoAsJson($retvalue);
 	}
 	
