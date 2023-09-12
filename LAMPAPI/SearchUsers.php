@@ -30,7 +30,7 @@
 		}
 		else
 		{
-			returnWithInfo($result);
+			returnWithInfo($result->fetch_assoc());
 		}
 		
 		$stmt->close();
