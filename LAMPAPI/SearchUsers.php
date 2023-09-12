@@ -30,7 +30,7 @@
 		}
 		else
 		{
-			returnWithInfo($result->fetch_assoc());
+			returnWithInfo('{"dsfdfsdfsn"}');
 		}
 		
 		$stmt->close();
