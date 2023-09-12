@@ -18,11 +18,15 @@
 		
 		$result = $stmt->get_result();
 
+		print "okokok ";
+		
 		// checks for username
 		while($row = $result->fetch_assoc())
 		{
 			$searchCount++;
 		}
+
+		print "okokok";
 		
 		if($searchCount == 0)
 		{
