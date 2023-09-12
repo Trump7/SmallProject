@@ -67,7 +67,9 @@
 	{
 		print "no this is it: ";
 		print $info;
+		print " ";
 		$retValue = '{"Success": "' . $info . '"}';
+		print $retValue;
 		sendResultInfoAsJson($retvalue);
 	}
 	
