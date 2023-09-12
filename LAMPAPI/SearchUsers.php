@@ -28,7 +28,7 @@
 		
 		if($searchCount == 0)
 		{
-			returnWithError('{"No Matching Login"}');
+			returnWithError('{"Error" : "No Matching Login"}');
 		}
 		else
 		{
