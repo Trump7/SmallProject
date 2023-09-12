@@ -1,9 +1,12 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title>COP 4331 LAMP Stack Demo</title>
+	<meta charset = "utf-8">
+	<meta name="viewport" content=<width="device-width, initial-scale=1">
+	<title>Laugh Sender</title>
 	<script type="text/javascript" src="js/code.js"></script>
     <link href="css/styles.css" rel="stylesheet">	
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
 	
 	<script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function() 
@@ -14,14 +17,28 @@
 	
 </head>
 <body>
+	<header>
+		<div class="navbar">
+			<div class="logo">
+				<img src="images/logo.png" alt="Laugh Sender Logo"/>
+			</div>
+			<div class="title">
+				<h1>Laugh Sender</h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><div id="loggedInDiv">
+						<span id="userName"></span>
+						<button type="button" id="logoutButton" class="buttons" onclick="doLogout();">Log Out</button>
+				</div></li>
+				</ul>	
+			</nav>
+		</div>
+	</header>
 
-<h1 id="title">COP 4331 LAMP Stack Demo</h1>
-
-<div id="loggedInDiv">
-	<span id="userName"></span><br />
-	<button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
-</div>
-
+<!--
 <div id="accessUIDiv">
 	<br />
 
@@ -35,6 +52,6 @@
 	<button type="button" id="addColorButton" class="buttons" onclick="addColor();"> Add Color </button><br />
 	<span id="colorAddResult"></span>
 </div>
-
+-->
 </body>
 </html>
