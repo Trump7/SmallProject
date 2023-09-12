@@ -32,7 +32,7 @@
 		}
 		else
 		{
-			print $result;
+			print $inData["Login"];
 			// print " ";
 			// print $result->fetch_assoc();
 			returnWithInfo('ok');
