@@ -31,24 +31,8 @@ function registerUser() {
     if (password.length < 8) {
         document.getElementById("registerResult").innerHTML = "Password should be at least 8 characters long";;
         return;
-    }
-	//for testing purposes, just seeing if create account works
-	createUser(firstName, lastName, login, password, function(regResult){
-		if(regResult == "true"){
-			//after creating the account if there were no errors, a success message will be displayed
-			document.getElementById("registerResult").innerHTML = "The account has been successfully created! Redirecting to login...";
-			//after getting the success message it will wait a few seconds and redirect to the login page
-			setTimeout(() => {
-				window.location.href = "login.html";
-			}, 4000);
-		}
-		else{
-			document.getElementById("registerResult").innerHTML = "Error: " + regResult;
-		}
-	});
+    }	
 	
-	
-	/*
 	//if the user is not available it will stop here
 	//if it is available, it will create the account
 	checkUserAvailable(login, function(userAvailable){
@@ -71,8 +55,6 @@ function registerUser() {
 			document.getElementById("registerResult").innerHTML = "User has already been taken";
 		}
 	});
-	
-	*/
 }	
 
 
@@ -91,7 +73,7 @@ function checkUserAvailable(username, result) {
 			if(this.readyState == 4 && this.status == 200){
 				let response = JSON.parse(xhr.responseText);
 				
-				if("No Matching Login" in response){
+				if("Error" in response){
 					result(true);
 				}
 				else{
