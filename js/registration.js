@@ -108,7 +108,7 @@ function checkUserAvailable(username, result) {
 }
 
 function createUser(first, last, user, pass, result){
-	let data = {firstName: first, lastName: last, login: user, password: pass};
+	let data = {FirstName: first, LastName: last, Login: user, Password: pass};
 	let jsonPayload = JSON.stringify(data);
 	
 	let url = urlBase + '/RegisterUser.' + extension;
