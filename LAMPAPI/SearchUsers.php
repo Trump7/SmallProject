@@ -17,16 +17,12 @@
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
-
-		print "okokok ";
 		
 		// checks for username
 		while($row = $result->fetch_assoc())
 		{
 			$searchCount++;
 		}
-
-		print "okokok ";
 		
 		if($searchCount == 0)
 		{
@@ -34,7 +30,9 @@
 		}
 		else
 		{
-			print "this is it";
+			print $result;
+			print " ";
+			print $result->fetch_assoc();
 			returnWithInfo('ok');
 		}
 		
@@ -65,9 +63,6 @@
 
 	function returnWithInfo($info)
 	{
-		print "no this is it: ";
-		print $info;
-		print " ";
 		$retValue = '{"Success": "' . $info . '"}';
 		print $retValue;
 		sendResultInfoAsJson($retvalue);
