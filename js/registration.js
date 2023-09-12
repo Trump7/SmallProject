@@ -42,9 +42,7 @@ function registerUser() {
 					//after creating the account if there were no errors, a success message will be displayed
 					document.getElementById("registerResult").innerHTML = "The account has been successfully created! Redirecting to login...";
 					//after getting the success message it will wait a few seconds and redirect to the login page
-					setTimeout(() => {
-						window.location.href = "login.html";
-					}, 4000);
+					setTimeout(window.location.href = "/login.html", 3000);
 				}
 				else{
 					document.getElementById("registerResult").innerHTML = "Error: " + regResult;
@@ -73,12 +71,13 @@ function checkUserAvailable(username, result) {
 			if(this.readyState == 4 && this.status == 200){
 				let response = JSON.parse(xhr.responseText);
 				
-				if("Error" in response){
-					result(true);
-				}
-				else{
+				if("Success" in response){
 					//username is taken
 					result(false);
+				}
+				else{
+					//username is available
+					result(true);
 				}	
 			}
 		};
@@ -106,7 +105,7 @@ function createUser(first, last, user, pass, result){
 				
 				if("error" in response){
 					//registration failed
-					result("error creating account");
+					result("There was a problem when creating the account.");
 				}
 				else{
 					result("true");
