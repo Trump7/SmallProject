@@ -30,7 +30,7 @@
 		}
 		else
 		{
-			returnWithInfo('{"dsfdfsdfsn"}');
+			returnWithInfo('ok');
 		}
 		
 		$stmt->close();
