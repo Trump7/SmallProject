@@ -30,7 +30,7 @@
 		}
 		else
 		{
-			returnWithInfo('{"Login found"}');
+			returnWithInfo($result);
 		}
 		
 		$stmt->close();
