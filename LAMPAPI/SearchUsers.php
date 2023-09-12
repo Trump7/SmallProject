@@ -54,11 +54,6 @@
 	{
 		sendResultInfoAsJson($err);
 	}
-	
-	// function returnWithInfo( $searchResults )
-	// {
-	// 	sendResultInfoAsJson($searchResults);
-	// }
 
 	function returnWithInfo($info)
 	{
