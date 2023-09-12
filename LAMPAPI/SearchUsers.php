@@ -26,7 +26,7 @@
 			$searchCount++;
 		}
 
-		print "okokok";
+		print "okokok ";
 		
 		if($searchCount == 0)
 		{
@@ -34,6 +34,7 @@
 		}
 		else
 		{
+			print "this is it";
 			returnWithInfo('ok');
 		}
 		
@@ -64,6 +65,8 @@
 
 	function returnWithInfo($info)
 	{
+		print "no this is it: ";
+		print $info;
 		$retValue = '{"Success": "' . $info . '"}';
 		sendResultInfoAsJson($retvalue);
 	}
