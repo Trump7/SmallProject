@@ -18,7 +18,7 @@
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();
-		returnWithError("");
+		returnWithInfo("Success");
 	}
 
 	function getRequestInfo()
@@ -36,6 +36,11 @@
 	{
 		$retValue = '{"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
+	}
+
+	function returnWithInfo( $searchResults )
+	{
+		sendResultInfoAsJson($searchResults);
 	}
 	
 ?>
