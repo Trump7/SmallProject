@@ -31,8 +31,8 @@
 		else
 		{
 			print $result;
-			print " ";
-			print $result->fetch_assoc();
+			// print " ";
+			// print $result->fetch_assoc();
 			returnWithInfo('ok');
 		}
 		
