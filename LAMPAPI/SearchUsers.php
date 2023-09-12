@@ -18,6 +18,8 @@
 		
 		$result = $stmt->get_result();
 		
+		print "sssssss";
+		
 		// checks for username
 		while($row = $result->fetch_assoc())
 		{
