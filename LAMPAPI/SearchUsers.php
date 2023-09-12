@@ -4,6 +4,7 @@
 	
 	$searchResults = "";
 	$searchCount = 0;
+	$login = $inData["Login"];
 
 	$conn = new mysqli("localhost", "APIMan", "WeLoveAPIMan", "COP4331");
 	if ($conn->connect_error) 
@@ -13,7 +14,8 @@
 	else
 	{
 		$stmt = $conn->prepare("SELECT * FROM Users WHERE Login = ?");
-		$stmt->bind_param("s", $inData["Login"]);
+		
+		$stmt->bind_param("s", $login);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
@@ -32,7 +34,7 @@
 		}
 		else
 		{
-			print $inData["Login"];
+			print $login;
 			// print " ";
 			// print $result->fetch_assoc();
 			returnWithInfo('ok');
