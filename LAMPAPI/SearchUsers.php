@@ -53,15 +53,15 @@
 		sendResultInfoAsJson($err);
 	}
 	
-	function returnWithInfo( $searchResults )
-	{
-		sendResultInfoAsJson($searchResults);
-	}
-
-	// function returnWithInfo($info)
+	// function returnWithInfo( $searchResults )
 	// {
-	// 	$retValue .= '{“Success” : "' . $info . '“}';
-	// 	sendResultInfoAsJson($retvalue);
+	// 	sendResultInfoAsJson($searchResults);
 	// }
+
+	function returnWithInfo($info)
+	{
+		$retValue .= '{"Success": "' . $info . '"}';
+		sendResultInfoAsJson($retvalue);
+	}
 	
 ?>
