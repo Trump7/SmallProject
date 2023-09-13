@@ -77,3 +77,25 @@ nav a.active{
 nav a:hover{
 	background-color: #ffe249; /*button color when mouse hovers over*/
 }
+
+
+/* table style */
+.contacts-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#contacts{
+	border-collapse: collapse;
+	width: 80%;
+	margin-top: 20px;
+	background-color: #FFFFFF;
+	box-shadow: 15px 15px 20px 4px;
+}
+
+#contacts th, #contacts td{
+	border: 1px solid #000000;
+	padding: 8px;
+	text-aligh: left;
+}
