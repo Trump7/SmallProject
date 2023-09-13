@@ -59,7 +59,7 @@
 	{
 		$retValue = '{"Success": "' . $info . '"}';
 		print $retValue;
-		sendResultInfoAsJson($retvalue);
+		sendResultInfoAsJson($retValue);
 	}
 	
 ?>
