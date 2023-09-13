@@ -28,9 +28,9 @@ function checkAuth() {
 	}
 	else{
 		loginButt.style.display = "block";
-		logoutButt.style.display = "hidden";
-		userNamePrompt.style.display = "hidden";
-		manButt.style.display = "hidden";
+		logoutButt.style.display = "none";
+		userNamePrompt.style.display = "none";
+		manButt.style.display = "none";
 	}
 }
 
