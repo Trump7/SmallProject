@@ -84,6 +84,11 @@ nav a:hover{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	transform: translateY(-50%);
 }
 
 #contacts{
