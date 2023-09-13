@@ -5,6 +5,31 @@ let userId = 0;
 let firstName = "";
 let lastName = "";
 
+
+function checkAuth() {
+	const {firstName, lastName, userId} = readCookie();
+	
+	const isAuthenticated = userId > 0;
+	
+	const loginButt = document.getElementById("loginButt");
+	const logoutButt = document.getElementById("logoutButt");
+	const userNamePrompt = document.getElementById("userNamePrompt");
+	const manButt = document.getElementById("manButt");
+	
+	if(isAuthenticated){
+		loginButt.style.display = "block";
+		logoutButt.style.display = "none";
+		userNamePrompt.style.display = "none";
+		manButt.style.display = "none";
+	}
+	else{
+		loginButt.style.display = "none";
+		logoutButt.style.display = "block";
+		userNamePrompt.style.display = "block";
+		manButt.style.display = "block";
+	}
+}
+
 function doLogin()
 {
 	userId = 0;
