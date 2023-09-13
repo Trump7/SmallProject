@@ -16,17 +16,21 @@ function checkAuth() {
 	const userNamePrompt = document.getElementById("userNamePrompt");
 	const manButt = document.getElementById("manButt");
 	
+	//if the user is logged in, it will show logout, prompt, and manager
+	//if the user is not logged in, it will only show the login button
+	//display = "none" means to take it out
+	//display = "block" means it's shown (block-level element)
 	if(isAuthenticated){
-		loginButt.style.display = "block";
-		logoutButt.style.display = "none";
-		userNamePrompt.style.display = "none";
-		manButt.style.display = "none";
-	}
-	else{
 		loginButt.style.display = "none";
 		logoutButt.style.display = "block";
 		userNamePrompt.style.display = "block";
 		manButt.style.display = "block";
+	}
+	else{
+		loginButt.style.display = "block";
+		logoutButt.style.display = "hidden";
+		userNamePrompt.style.display = "hidden";
+		manButt.style.display = "hidden";
 	}
 }
 
