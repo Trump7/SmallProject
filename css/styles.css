@@ -77,11 +77,3 @@ nav a.active{
 nav a:hover{
 	background-color: #ffe249; /*button color when mouse hovers over*/
 }
-
-
-#userName{
-    display: inline-block;
-    width: 80%;
-    margin-left: 10%;
-    text-align: center;
-}
