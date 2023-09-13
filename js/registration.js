@@ -46,18 +46,20 @@ function registerUser() {
 				}
 				else{
 					document.getElementById("registerResult").innerHTML = "Error: " + regResult;
+					return;
 				}
 			});
 		}
 		else{
 			document.getElementById("registerResult").innerHTML = "User has already been taken";
+			return;
 		}
 	});
 }	
 
 
 function checkUserAvailable(username, result) {
-	let data = {login: username};
+	let data = {Login: username};
 	let jsonPayload = JSON.stringify(data);
 	
 	let url = urlBase + '/SearchUsers.' + extension;
