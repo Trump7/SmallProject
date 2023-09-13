@@ -23,7 +23,10 @@
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><a href="#">About</a></li>
-						<li><a href="login.html">Login</a></li>
+						<li id="manButt"><a href="#">Manager</a></li>
+						<li id="userNamePrompt"><span id="userName"></span></li>
+						<li id="logoutButt"><a href="#" onclick="doLogout();">Log Out</a></li>
+						<li id="loginButt"><a href="login.html">Login</a></li>
 					</ul>	
 				</nav>
 			</div>
@@ -33,6 +36,14 @@
 			<a href="https://github.com/Trump7/SmallProject" class="slogan">Firmly Grasp the Humor</a>
 			<p class = "slogansub">Contact Manager for Sending Laughs</p>
 		</div>
+		
+		<script type="text/javascript" src="js/code.js"></script>
+		
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', function() {
+				checkAuth();
+			});
+		</script>		
 	</body>
 	
 </html>
