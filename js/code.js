@@ -15,6 +15,7 @@ function checkAuth() {
 	const logoutButt = document.getElementById("logoutButt");
 	const userNamePrompt = document.getElementById("userNamePrompt");
 	const manButt = document.getElementById("manButt");
+	const userName = document.getElementById("userName");
 	
 	//if the user is logged in, it will show logout, prompt, and manager
 	//if the user is not logged in, it will only show the login button
@@ -25,6 +26,7 @@ function checkAuth() {
 		logoutButt.style.display = "block";
 		userNamePrompt.style.display = "block";
 		manButt.style.display = "block";
+		userName.innerHTML = "Logged in as<br>" + firstName + " " + lastName;
 	}
 	else{
 		loginButt.style.display = "block";
