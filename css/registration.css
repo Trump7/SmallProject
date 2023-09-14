@@ -42,7 +42,10 @@ nav ul{
 }
 
 nav li{
-	margin: 0 10px;
+	margin-right: -15px;
+}
+#navLogin{
+	padding-right: 25px;
 }
 
 nav a{
@@ -69,12 +72,14 @@ nav a:hover{
 }
 .registrationDiv{
 	margin-top: 130px;
-	margin-left: 30%;
+	margin-left: 32.5%;
+	border-radius: 10px 10px 10px 10px;
 	font-size: 15px;
-	width: 35%;
+	width: 30%;
 	padding: 25px;
 	background-color: white;
 	box-shadow: 15px 15px 20px 4px;
+	height: 400px;
 } 
 
 #registerFirstName, #registerLastName, #registerPhoneNum, #registerUsername, #registerPassword, #confirmPassword{
@@ -84,18 +89,30 @@ nav a:hover{
 input[type="text"], input[type="number"], input[type="password"]{
 	border-radius: 0px;
 	text-align: center;
-	width: 48%;
-	margin-left: 113px;
-	margin-bottom: 3%;
+	width: 77%;
+	margin-left: 36px;
+	margin-bottom: 7%;
 	font-family: serif;
+    border-radius: 7px;
+}
+#registerFirstName{
+	width: 141px;
+}
+
+#registerLastName{
+	width: 141px;
+	margin-left: 188px;
+	margin-top: -55px;
 }
 
 .buttons{
 	font-size: 16px;
 	border-radius: 5px;
-	width: 16%;
-	margin-top: 10px;
-	margin-left: 42%;
+	width: 77%;
+    height: 30px;
+	margin-top: 16px;
+	margin-left: 10%;
+    margin-bottom: 15px;
 	font-family: serif;
 	color: black;
 	background-color: lightcyan;
@@ -106,8 +123,21 @@ input[type="text"], input[type="number"], input[type="password"]{
 	font-size: 25px;
 	width: 90%;
 	text-align: center;
-	margin-left: 5%;
-	margin-bottom: 5%;
+	margin-left: 4%;
+    margin-top: 20px;
+	margin-bottom: 10%;
 	font-family: initial;
 	color: darkturquoise;
+}
+
+.title{
+	font-family: 'Boogaloo', cursive;
+	font-size: 20px;
+	flex-grow: 1;
+	text-shadow: 2px 2px 0 #000;
+	color: #f8db6e;
+}
+
+#YesAccount{
+    margin-left: 38px;
 }

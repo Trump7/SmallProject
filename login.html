@@ -14,28 +14,36 @@
 			<div class="logo">
 				<img src="images/logo.png" alt="Laugh Sender Logo"/>
 			</div>
-				
+			<div class="title">
+				<h1>Laugh Sender</h1>
+			</div>
 			<nav>
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					<li><a href="registration.html">SignUp</a></li>
+					<li><a href="#">About</a></li>
+					<li id="navSignup"><a href="registration.html">Signup</a></li>
 				</ul>	
 			</nav>
 		</div>
 	</header>
 
-<h1 id="title">COP 4331 LAMP Stack Demo</h1>
-
 <div id="loginDiv">
-	<span id="inner-title">LOGIN</span>
+	<span id="inner-title">LOGIN TO YOUR ACCOUNT</span>
 	<input type="text" id="loginName" placeholder="Username" /><br />
 	<input type="password" id="loginPassword" placeholder="Password"/><br/>
-	<label>
+	<label id="RememberMeChckBox">
 		<input type="checkbox" checked="checked" name="remember"> Remember me
 	</label><br/>
-	<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> LOGIN </button>
+	<button type="button" id="loginButton" class="buttons" onclick="doLogin();">LOGIN</button>
 	<span id="loginResult"></span><br/>
-	<span class="psw">Forgot <a href="#">password?</a></span>
+	<span class="psw"><a href="#">Forgot Fassword?</a></span>
+</div>
+<div id="welcomeBackDiv">
+	<h2 id="WelcomeMessage"> Welcome! </h2>
+	<img id="pic" src="images/logo.png" alt="Laugh Sender Logo"/>
+	<div>
+		<span id="NoAccount">Don't Have an Account?  <a href="registration.html">Sign Up</a></span>
+	</div>
 </div>
 
 </body>

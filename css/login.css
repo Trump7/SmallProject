@@ -17,6 +17,7 @@ header{
 	position: fixed;
 	border-bottom: 2px solid #000000;
 	border-radius: 0 0 10px 10px;
+	margin-top: -174px;
 }
 
 .navbar{
@@ -43,7 +44,10 @@ nav ul{
 }
 
 nav li{
-	margin: 0 10px;
+	margin-right: -15px;
+}
+#navSignup{
+	padding-right: 25px;
 }
 
 nav a{
@@ -70,13 +74,32 @@ nav a:hover{
 }
 
 #loginDiv{
-	margin-top: 130px;
-	margin-left: 23%;
+	margin-top: 200px;
+	margin-left: 20%;
+	border-radius: 10px 10px 10px 10px;
 	font-size: 15px;
-	width: 50%;
+	width: 25%;
 	padding: 25px;
 	background-color: white;
 	box-shadow: 15px 15px 20px 4px;
+	height: 284px;
+}
+#welcomeBackDiv{
+	background-color: powderblue;
+	margin-left: 643px;
+	margin-top: -370px;
+	height: 334px;
+	width: 29%;
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 15px 15px 20px 4px;
+
+}
+#WelcomeMessage{
+	text-align: center;
+	font-size: 45px;
+	font-family: 'Boogaloo', cursive;
+	padding-top: 68px;
+	margin-bottom: 70px;
 }
 
 #loginName{
@@ -88,20 +111,26 @@ nav a:hover{
 }
 
 input[type="text"], input[type="password"]{
-	border-radius: 0px;
+	border-radius: 7px;
 	text-align: center;
-	width: 60%;
-	margin-left: 125px;
-	margin-bottom: 2%;
+	width: 80%;
+	margin-left: 30px;
+	margin-bottom: 5%;
 	font-family: serif;
 }
 
-.buttons{
+#RememberMeChckBox{
+	margin-left: -64;
+}
+
+#loginButton{
 	font-size: 16px;
 	border-radius: 5px;
-	width: 15%;
-	margin-top: 10px;
-	margin-left: 42%;
+	width: 80%;
+	height: 30px;
+	margin-top: 12px;
+	margin-bottom:25px;
+	margin-left: 10%;
 	font-family: serif;
 	color: black;
 	background-color: lightcyan;
@@ -109,17 +138,49 @@ input[type="text"], input[type="password"]{
 
 #inner-title{
 	display: inline-block;
-	font-size: 25px;
+	margin-top: 20px;
+	font-size: 22px;
 	width: 90%;
 	text-align: center;
-	margin-left: 5%;
-	margin-bottom: 5%;
+	margin-left: 17px;
+	margin-bottom: 10%;
 	font-family: initial;
 	color: darkturquoise;
 }
 input[type="checkbox"]{
-	margin-left: 125px;
+	margin-left: 96px;
 	margin-bottom: 2%;
 	font-family: serif;
 	font-size: 15px;
+}
+
+#NoAccount{
+	margin-left: 81px;
+	margin-top: 58px;
+}
+
+#signUpButton{
+	font-size: 16px;
+	border-radius: 5px;
+	width: 25%;
+	margin-top: -10px;
+	margin-bottom:25px;
+	margin-left: 39%;
+	font-family: serif;
+	color: black;
+	background-color: white;
+}
+.title{
+	font-family: 'Boogaloo', cursive;
+	font-size: 20px;
+	flex-grow: 1;
+	text-shadow: 2px 2px 0 #000;
+	color: #f8db6e;
+}
+
+#pic{
+	height: 80px;
+	margin-top: -65px;
+	margin-left: 139px;
+	margin-bottom: 10px;
 }
