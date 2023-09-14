@@ -42,7 +42,7 @@ function registerUser() {
 					//after creating the account if there were no errors, a success message will be displayed
 					document.getElementById("registerResult").innerHTML = "The account has been successfully created! Redirecting to login...";
 					//after getting the success message it will wait a few seconds and redirect to the login page
-					setTimeout(window.location.href = "/login.html", 3000);
+					setTimeout(function(){window.location.href = "/login.html";}, 3000);
 				}
 				else{
 					document.getElementById("registerResult").innerHTML = "Error: " + regResult;
