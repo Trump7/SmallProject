@@ -91,18 +91,9 @@ input[type="text"], input[type="number"], input[type="password"]{
 	text-align: center;
 	width: 77%;
 	margin-left: 36px;
-	margin-bottom: 7%;
+	margin-bottom: 4%;
 	font-family: serif;
     border-radius: 7px;
-}
-#registerFirstName{
-	width: 141px;
-}
-
-#registerLastName{
-	width: 141px;
-	margin-left: 188px;
-	margin-top: -55px;
 }
 
 .buttons{
@@ -110,7 +101,7 @@ input[type="text"], input[type="number"], input[type="password"]{
 	border-radius: 5px;
 	width: 77%;
     height: 30px;
-	margin-top: 16px;
+	margin-top: 18px;
 	margin-left: 10%;
     margin-bottom: 15px;
 	font-family: serif;
