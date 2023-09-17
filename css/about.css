@@ -1,0 +1,178 @@
+body{
+	background-image: url('../images/background.jpg');
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+	margin: 0px;
+	padding: 0px;
+}
+
+header{
+    margin-top: -132px;
+	width: 100%;
+	height: 100px;
+	background: #99dfe6;
+	position: fixed;
+	border-bottom: 2px solid #000000;
+	border-radius: 0 0 10px 10px;
+}
+
+.navbar{
+	display: flex; /* Creating the box affect for navigation order */
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 20px;
+	height: 100px;
+}
+
+.logo img{
+	float: left;
+    max-height: 100px;
+    max-width: 100%;
+}
+
+nav ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+}
+
+nav li{
+	margin-right: -15px;
+}
+#navLogin{
+	padding-right: 25px;
+}
+
+nav a{
+	font-weight: bold;
+	padding: 15px 20px;  /*Space between text and border Y,X*/
+	border: 2px solid #000000; /*Border around buttons*/
+	border-radius: 5px; /*Round corners*/
+	color: #000000; /*Font color on buttons*/
+	margin-right: 30px; /*How far buttons are from right*/
+	text-decoration: none; /*No underline*/
+	background-color: #f8db6e; /*button background color*/
+}
+
+nav a.button{
+	background-color: #000000; /*button color for selectable webpage*/
+}
+
+nav a.active{
+	background-color: #000000; /*button color for active webpage*/
+}
+
+nav a:hover{
+	background-color: #ffe249; /*button color when mouse hovers over*/
+}
+#aboutDiv{
+	margin-top: 130px;
+    /* opacity: 0.9; */
+	margin-left: 10.5%;
+	border-radius: 10px 10px 10px 10px;
+	font-size: 15px;
+	width: 75%;
+	padding: 25px;
+	/* background-color: white;
+	box-shadow: 15px 15px 20px 4px; */
+	height: 400px;
+} 
+#inner-title{
+    /* position: fixed; */
+    /* display: flex;  */
+    padding: 206px;
+    font-size: 30px;
+    font-family: 'Boogaloo', cursive;
+    text-shadow: 2px 2px 0 #000;
+    color: peru;
+}
+
+#inner-title2{
+    /* position: fixed;
+    display: flex; */
+    color: #000;
+    margin-top: 25px;
+    margin-left: 340px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#cadenPic, #cadenPic, #leoPic, #sanyaPic, #mattPic, #timPic, #samPic{
+    height: 140px;
+    margin: 50px;
+    border-radius: 45px;
+}
+
+#APIbox{
+    display: flex;
+    height: 320px;
+    margin-left:220px;
+    width: 475px;
+    background-color: white;
+    box-shadow: 15px 15px 20px 4px;
+
+}
+#aboutCaden{
+    margin-top: 207px;
+    margin-left:-448px;
+    margin-right: 139px;
+}
+#aboutSam{
+    margin-top: 207px;
+    margin-left: -88px;
+    margin-right: 30px;
+}
+
+#PMnDatabasebox{
+    display: flex;
+    height: 320px;
+    margin-top: 15px;
+    margin-left:220px;
+    width: 475px;
+    background-color: white;
+    box-shadow: 15px 15px 20px 4px;
+
+}
+#aboutLeo{
+    margin-top: 207px;
+    margin-left:-419px;
+    margin-right: 139px;
+}
+#timPic{
+    margin-left: 73px;
+}
+#aboutTim{
+    margin-top: 207px;
+    margin-left: -88px;
+    margin-right: 30px;
+}
+
+#Frontendbox{
+    display: flex;
+    height: 320px;
+    margin-top: 15px;
+    margin-left:220px;
+    width: 475px;
+    background-color: white;
+    box-shadow: 15px 15px 20px 4px;
+
+}
+#aboutSanya{
+    margin-top: 207px;
+    margin-left:-419px;
+    margin-right: 139px;
+}
+#aboutMatt{
+    margin-top: 207px;
+    margin-left: -88px;
+    margin-right: 30px;
+}
+#sanyaPic{
+    border-radius: 40px;
+    margin-left: 64px;
+}
