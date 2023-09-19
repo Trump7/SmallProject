@@ -219,7 +219,7 @@ function addContact(){
 	
 	//verification that name is present
 	if(name == ''){
-		document.getElementById('add-warning').innerHTML = "Name must be present";
+		document.getElementById('add-warning').innerHTML = "Warning: Name must be present";
 		return;
 	}
 	
@@ -242,7 +242,7 @@ function addContact(){
 				let response = JSON.parse(xhr.responseText);
 				
 				if("success" in response){
-					setTimeout(function(){document.getElementById('add-warning').innerHTML = "Account Added";}, 2000);
+					setTimeout(function(){document.getElementById('add-warning').innerHTML = "Account Successfully Added";}, 2000);
 					loadContacts()
 					closeAddContact();
 				}
