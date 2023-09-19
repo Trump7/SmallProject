@@ -9,11 +9,12 @@
     <link href="css/styles.css" rel="stylesheet">	
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
 	
+	<script type="text/javascript" src="js/manager.js"></script>
+		
 	<script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', function() 
-	{
-		readCookie();
-	}, false);
+		document.addEventListener('DOMContentLoaded', function() {
+			loadContacts();
+		});
 	</script>
 	
 </head>
@@ -46,7 +47,7 @@
 			<button onclick="searchContacts()">Search</button>
 		</div>
 		<div class="add-box">
-			<button onclick="addContact()">Add Contact</button>
+			<button onclick="openAddContact()">Add Contact</button>
 		</div>
 	</div>
 	
@@ -59,10 +60,22 @@
 				<th></th>
 			</tr>
 		</thread>
-		<tbody>
-		<!-- Will fill in data that goes in table later -->
-		</tbody>
+		<tbody id="contacts-contents"></tbody>
 	</table>
 </div>
+<div class="add-contacts-window" id="add-window">
+	<div class="add-Form">
+		<label>Name:</label>
+		<input type="text" id="name" placeholder="Joe Blow">
+		<label>Phone:</label>
+		<input type="text" id="phone" placeholder="407-823-2000">
+		<label>Email:</label>
+		<input type="text" id="email" placeholder="joe@blow.com">
+	
+		<button onclick="addContact()">Save</button>
+		<button onclick="closeAddContact()">Cancel</button>
+	</div>
+</div>
+
 </body>
 </html>
