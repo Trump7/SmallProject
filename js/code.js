@@ -186,6 +186,13 @@ function loadContacts(){
 	catch(err){}
 }
 
+//function to search through existing contacts
+function searchContacts(){
+	
+}
+
+
+
 //used to open the add contact window
 function openAddContact(){
 	//show the add window
