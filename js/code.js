@@ -209,6 +209,7 @@ function closeAddContact(){
 	document.getElementById('name').value = '';
 	document.getElementById('phone').value = '';
 	document.getElementById('email').value = '';
+	document.getElementById('add-warning').innerHTML = "";
 }
 
 //used to add a contact to that users' list
@@ -242,9 +243,8 @@ function addContact(){
 				let response = JSON.parse(xhr.responseText);
 				
 				if("success" in response){
-					setTimeout(function(){document.getElementById('add-warning').innerHTML = "Account Successfully Added";}, 2000);
-					loadContacts()
-					closeAddContact();
+					document.getElementById('add-warning').innerHTML = "Account Successfully Added";
+					setTimeout(function(){loadContacts(); closeAddContact();}, 2000);
 				}
 				else{
 					document.getElementById("add-warning").innerHTML = "Error: Perhaps contact already exists?";
@@ -256,84 +256,4 @@ function addContact(){
 	catch(err){
 		document.getElementById("add-warning").innerHTML = err.message;
 	}
-}
-
-
-
-
-//not used
-function addColor()
-{
-	let newColor = document.getElementById("colorText").value;
-	document.getElementById("colorAddResult").innerHTML = "";
-
-	let tmp = {color:newColor,userId,userId};
-	let jsonPayload = JSON.stringify( tmp );
-
-	let url = urlBase + '/AddColor.' + extension;
-	
-	let xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
-	{
-		xhr.onreadystatechange = function() 
-		{
-			if (this.readyState == 4 && this.status == 200) 
-			{
-				document.getElementById("colorAddResult").innerHTML = "Color has been added";
-			}
-		};
-		xhr.send(jsonPayload);
-	}
-	catch(err)
-	{
-		document.getElementById("colorAddResult").innerHTML = err.message;
-	}
-	
-}
-//not used
-function searchColor()
-{
-	let srch = document.getElementById("searchText").value;
-	document.getElementById("colorSearchResult").innerHTML = "";
-	
-	let colorList = "";
-
-	let tmp = {search:srch,userId:userId};
-	let jsonPayload = JSON.stringify( tmp );
-
-	let url = urlBase + '/SearchColors.' + extension;
-	
-	let xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
-	{
-		xhr.onreadystatechange = function() 
-		{
-			if (this.readyState == 4 && this.status == 200) 
-			{
-				document.getElementById("colorSearchResult").innerHTML = "Color(s) has been retrieved";
-				let jsonObject = JSON.parse( xhr.responseText );
-				
-				for( let i=0; i<jsonObject.results.length; i++ )
-				{
-					colorList += jsonObject.results[i];
-					if( i < jsonObject.results.length - 1 )
-					{
-						colorList += "<br />\r\n";
-					}
-				}
-				
-				document.getElementsByTagName("p")[0].innerHTML = colorList;
-			}
-		};
-		xhr.send(jsonPayload);
-	}
-	catch(err)
-	{
-		document.getElementById("colorSearchResult").innerHTML = err.message;
-	}
-	
 }
