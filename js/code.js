@@ -247,7 +247,7 @@ function addContact(){
 					closeAddContact();
 				}
 				else{
-					document.getElementById("add-warning").innerHTML = err.message;
+					document.getElementById("add-warning").innerHTML = "Error: Perhaps contact already exists?";
 				}
 			}
 		};
