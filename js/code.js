@@ -33,9 +33,12 @@ function checkAuth() {
 		logoutButt.style.display = "none";
 		userNamePrompt.style.display = "none";
 		manButt.style.display = "none";
-		if(window.location.href = "color.html"){
+		/* Not sure why this isn't working... 
+		Should redirect user from color.html if not logged in
+		if(window.location.href == "color.html"){
 			window.location.href = "login.html";
 		}
+		*/
 	}
 }
 
