@@ -18,6 +18,7 @@ header{
 	justify-content: space-between;
 	align-items: center;
 	display: flex;
+	min-width: 800px;
 }
 
 .navbar{
@@ -82,25 +83,83 @@ nav a:hover{
 /* table style */
 .contacts-container{
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	position: absolute;
-	top: 50%;
+	top: 20%;
 	left: 0;
 	right: 0;
-	transform: translateY(-50%);
+	background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 15px 15px 20px 4px;
+    padding: 20px;
+    width: 80%; /* Adjust the width as needed */
+	max-width: 1200px;
+	min-width: 600px;
+    margin: 20px auto; /* Center the container horizontally */
+}
+.action-box{
+	display: flex;
+	width: 100%;
+	margin-bottom: 10px;
 }
 
+/*Search Box*/
+.search-box{
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.search-box input[type="text"]{
+	padding: 5px;
+	border: 1px solid #000;
+	border-radius: 5px;
+}
+
+.search-box button{
+	padding: 5px 20px;
+	background-color: #f8db6e;
+	border: 2px solid #000;
+	border-radius: 5px;
+	color: #000;
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+.search-box button:hover{
+	background-color: #ffe249;
+}
+
+.add-box {
+	display: flex;
+	width: 15%;
+}
+
+.add-box button{
+	padding: 5px 30px;
+	background-color: #f8db6e;
+	border: 2px solid #000;
+	border-radius: 5px;
+	color: #000;
+	cursor: pointer;	
+}
+
+.add-box button:hover{
+	background-color: #ffe249;
+}
+
+/*Contacts table*/
 #contacts{
 	border-collapse: collapse;
-	width: 80%;
+	width: 100%;
 	margin-top: 20px;
 	background-color: #FFFFFF;
-	box-shadow: 15px 15px 20px 4px;
 }
 
 #contacts th, #contacts td{
 	border: 1px solid #000000;
 	padding: 8px;
-	text-aligh: left;
+	text-align: left;
 }

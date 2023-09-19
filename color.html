@@ -40,12 +40,23 @@
 
 
 <div class="contacts-container">
+	<div class="action-box">
+		<div class="search-box">
+			<input type="text" id="contactSearch" placeholder="Search Contacts...">
+			<button onclick="searchContacts()">Search</button>
+		</div>
+		<div class="add-box">
+			<button onclick="addContact()">Add Contact</button>
+		</div>
+	</div>
+	
 	<table id="contacts">
 		<thread>
 			<tr>
 				<th>Name</th>
 				<th>Phone</th>
 				<th>Email</th>
+				<th></th>
 			</tr>
 		</thread>
 		<tbody>
