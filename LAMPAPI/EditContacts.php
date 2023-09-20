@@ -21,7 +21,7 @@
 		$stmt = $conn->prepare("UPDATE Contacts SET Name = ?, Phone = ?, Email = ? WHERE ID = ?");
 
 		// Bind the variables to the SQL statement
-		$stmt->bind_param("sssi", $name, $phone, $email, $id);
+		$stmt->bind_param("sssi", $name, $phone, $email, $id;
 
 		// Execute the SQL statement
 		$stmt->execute();
