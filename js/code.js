@@ -256,7 +256,7 @@ function editContact(id){
 	let data = {Name: name, Phone: phone, Email: mail, ID: id};
 	let jsonPayload = JSON.stringify(data);
 	
-	let url = urlBase + '/EditContact.' + extension;
+	let url = urlBase + '/EditContacts.' + extension;
 	let xhr = new XMLHttpRequest();
 	
 	xhr.open("POST", url, true);
