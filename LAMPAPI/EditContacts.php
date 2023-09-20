@@ -6,6 +6,7 @@
 	$email = $inData["Email"];
 	$name = $inData["Name"];
   	$id = $inData["ID"];
+	$userid = $inData["userID"];
 
 	// Initialize database connection
 	$conn = new mysqli("localhost", "APIMan", "WeLoveAPIMan", "COP4331"); 	
@@ -18,10 +19,10 @@
 	else
 	{
 		// Prepare SQL statement for inserting data
-		$stmt = $conn->prepare("UPDATE Contacts SET Name = ?, Phone = ?, Email = ? WHERE ID = ?");
+		$stmt = $conn->prepare("UPDATE Contacts SET Name = ?, Phone = ?, Email = ? WHERE (ID = ? and userID = ?)");
 
 		// Bind the variables to the SQL statement
-		$stmt->bind_param("sssi", $name, $phone, $email, $id);
+		$stmt->bind_param("sssii", $name, $phone, $email, $id, $userid);
 
 		// Execute the SQL statement
 		$stmt->execute();
