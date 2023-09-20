@@ -189,7 +189,7 @@ function loadContacts(){
 //function to search through existing contacts
 function searchContacts(){
 	const searchBox = document.getElementById('contactSearch').value.toLowerCase();
-	const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+	const rows = document.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
 	
 	console.log('Search Box:', searchBox);
 	console.log('First row:', rows);
