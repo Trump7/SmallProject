@@ -3,7 +3,6 @@
 
 	// Extract variables from the request payload
 	$id = $inData["ID"];
-	$userid = $inData["userID"];
 
 	// Initialize database connection
 	$conn = new mysqli("localhost", "APIMan", "WeLoveAPIMan", "COP4331"); 	
@@ -16,10 +15,10 @@
 	else
 	{
 		// Prepare SQL statement for inserting data
-		$stmt = $conn->prepare("DELETE FROM Contacts WHERE (ID = ? and userID = ?)");
+		$stmt = $conn->prepare("DELETE FROM Contacts WHERE ID = ?");
 
 		// Bind the variables to the SQL statement
-		$stmt->bind_param("ss", $id, $userid);
+		$stmt->bind_param("s", $id);
 
 		// Execute the SQL statement
 		$stmt->execute();
