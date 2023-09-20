@@ -174,7 +174,7 @@ function loadContacts(){
 						tableVals += '<td>' + response.results[i].Name + '</td>';
 						tableVals += '<td>' + response.results[i].Phone + '</td>';
 						tableVals += '<td>' + response.results[i].Email + '</td>';
-						tableVals += '<td><button onclick="editContact(' + i + ')">Edit</button><button onclick="deleteContact(' + i + ')">Delete</button></td>';
+						tableVals += '<td><button onclick="editContact(' + result.ID + ')">Edit</button><button onclick="deleteContact(' + result.ID + ')">Delete</button></td>';
 						tableVals += '</tr>';
 					}
 					
@@ -219,7 +219,7 @@ function searchContacts(){
 						tableVals += '<td>' + result.Name + '</td>';
 						tableVals += '<td>' + result.Phone + '</td>';
 						tableVals += '<td>' + result.Email + '</td>';
-						tableVals += '<td><button onclick="editContact(' + i + ')">Edit</button><button onclick="deleteContact(' + i + ')">Delete</button></td>';
+						tableVals += '<td><button onclick="editContact(' + result.ID + ')">Edit</button><button onclick="deleteContact(' + result.ID + ')">Delete</button></td>';
 						tableVals += '</tr>'
 					}
 					
@@ -233,7 +233,7 @@ function searchContacts(){
 }
 
 function deleteContact(index){
-	const warn = confirmation("Are you sure you want to delete this contact?");
+	alert("Are you sure you want to delete this contact?");
 }
 
 function editContact(index){
