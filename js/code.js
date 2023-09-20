@@ -189,13 +189,20 @@ function loadContacts(){
 //function to search through existing contacts
 function searchContacts(){
 	const searchBox = document.getElementById('contactSearch').value.toLowerCase();
-	const table = document.getElementById('contacts');
 	const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+	
+	console.log('Search Box:', searchBox);
+	console.log('First row:', rows);
 	
 	for(let i = 0; i < rows.length; i++){
 		const nameCell = rows[i].getElementsByTagName('td')[0];
 		const phoneCell = rows[i].getElementsByTagName('td')[1];
 		const emailCell = rows[i].getElementsByTagName('td')[2];
+		
+		//debugging
+		console.log('Name Cell:', nameCell);
+		console.log('Phone Cell:', phoneCell);
+		console.log('Email Cell:', emailCell);
 		
 		const name = nameCell.textContent.toLowerCase();
 		const phone = phoneCell.textContent.toLowerCase();
