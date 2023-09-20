@@ -73,16 +73,16 @@ nav a:hover{
 	background-color: #ffe249; /*button color when mouse hovers over*/
 }
 
-#loginDiv{
-	margin-top: 200px;
-	margin-left: 30%;
-	border-radius: 10px 10px 10px 10px;
-	font-size: 15px;
-	width: 35%;
-	padding: 25px;
-	background-color: white;
-	box-shadow: 15px 15px 20px 4px;
-	height: 300px;
+#loginDiv {
+    margin-top: 10%;
+    margin-left: 30%;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 15px;
+    width: 35%;
+    padding: 25px;
+    background-color: white;
+    box-shadow: 15px 15px 20px 4px;
+    height: 37%;
 }
 /* #welcomeBackDiv{
 	background-color: powderblue;
@@ -115,13 +115,13 @@ input[type="text"], input[type="password"]{
 	border-radius: 7px;
 	text-align: center;
 	width: 80%;
-	margin-left: 45px;
+	margin-left: 10%;
 	margin-bottom: 5%;
 	font-family: serif;
 }
 
 #RememberMeChckBox{
-	margin-left: -50px;
+	margin-left: -4%;
 }
 
 #loginButton{
@@ -154,10 +154,13 @@ input[type="checkbox"]{
 	font-family: serif;
 	font-size: 15px;
 }
+.psw{
+	margin-left: 16%;
+}
 
 #NoAccount{
-	margin-left: 130px;
-	margin-top: 58px;
+	margin-left: 20%;
+	/* margin-top: 58px; */
 }
 
 #signUpButton{

@@ -79,7 +79,7 @@ nav a:hover{
 	padding: 25px;
 	background-color: white;
 	box-shadow: 15px 15px 20px 4px;
-	height: 400px;
+	height: 50%;
 } 
 
 #registerFirstName, #registerLastName, #registerPhoneNum, #registerUsername, #registerPassword, #confirmPassword{
@@ -90,7 +90,7 @@ input[type="text"], input[type="number"], input[type="password"]{
 	border-radius: 0px;
 	text-align: center;
 	width: 77%;
-	margin-left: 36px;
+	margin-left: 10%;
 	margin-bottom: 4%;
 	font-family: serif;
     border-radius: 7px;
@@ -114,7 +114,7 @@ input[type="text"], input[type="number"], input[type="password"]{
 	font-size: 25px;
 	width: 90%;
 	text-align: center;
-	margin-left: 4%;
+	margin-left: 5%;
     margin-top: 20px;
 	margin-bottom: 10%;
 	font-family: initial;

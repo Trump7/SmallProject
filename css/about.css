@@ -72,32 +72,26 @@ nav a:hover{
 }
 #aboutDiv{
 	margin-top: 130px;
-    /* opacity: 0.9; */
 	margin-left: 10.5%;
 	border-radius: 10px 10px 10px 10px;
 	font-size: 15px;
 	width: 75%;
 	padding: 25px;
-	/* background-color: white;
-	box-shadow: 15px 15px 20px 4px; */
 	height: 400px;
 } 
 #inner-title{
-    /* position: fixed; */
-    /* display: flex;  */
     padding: 206px;
-    font-size: 30px;
+    font-size: 300%;
     font-family: 'Boogaloo', cursive;
     text-shadow: 2px 2px 0 #000;
     color: peru;
+    margin-left: 17.5%;
 }
 
 #inner-title2{
-    /* position: fixed;
-    display: flex; */
     color: #000;
-    margin-top: 25px;
-    margin-left: 340px;
+    margin-top: 4%;
+    margin-left: 44%;
     font-size: x-large;
     font-weight: bold;
 }
@@ -111,7 +105,7 @@ nav a:hover{
 #APIbox{
     display: flex;
     height: 320px;
-    margin-left:220px;
+    margin-left:35%;
     width: 475px;
     background-color: white;
     box-shadow: 15px 15px 20px 4px;
@@ -132,7 +126,7 @@ nav a:hover{
     display: flex;
     height: 320px;
     margin-top: 15px;
-    margin-left:220px;
+    margin-left:35%;
     width: 475px;
     background-color: white;
     box-shadow: 15px 15px 20px 4px;
@@ -156,7 +150,7 @@ nav a:hover{
     display: flex;
     height: 320px;
     margin-top: 15px;
-    margin-left:220px;
+    margin-left:35%;
     width: 475px;
     background-color: white;
     box-shadow: 15px 15px 20px 4px;
