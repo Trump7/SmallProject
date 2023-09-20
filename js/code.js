@@ -188,7 +188,26 @@ function loadContacts(){
 
 //function to search through existing contacts
 function searchContacts(){
+	const searchBox = document.getElementById('contactSearch').value.toLowerCase();
+	const table = document.getElementById('contacts');
+	const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
 	
+	for(let i = 0; i < rows.length; i++){
+		const nameCell = rows[i].getElementsByTagName('td')[0];
+		const phoneCell = rows[i].getElementsByTagName('td')[1];
+		const emailCell = rows[i].getElementsByTagName('td')[2];
+		
+		const name = nameCell.textContent.toLowerCase();
+		const phone = phoneCell.textContent.toLowerCase();
+		const email = emailCell.textContent.toLowerCase();
+		
+		if(name.includes(searchBox) || phone.includes(searchBox) || email.includes(searchBox)){
+			rows[i].style.display = '';
+		}
+		else{
+			rows[i].style.display = 'none';
+		}
+	}
 }
 
 
