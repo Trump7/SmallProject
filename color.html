@@ -13,6 +13,7 @@
 		document.addEventListener('DOMContentLoaded', function() {
 			checkAuth();
 			closeAddContact();
+			closeEditContact();
 			loadContacts();
 		});
 	</script>
@@ -76,6 +77,21 @@
 		<span id="add-warning"></span>
 		<button onclick="addContact()">Save</button>
 		<button onclick="closeAddContact()">Cancel</button>
+	</div>
+</div>
+
+<div class="edit-contacts-window" id="edit-window">
+	<div class="edit-Form">
+		<label>Name:</label>
+		<input type="text" id="e.name">
+		<label>Phone:</label>
+		<input type="text" id="e.phone">
+		<label>Email:</label>
+		<input type="text" id="e.email">
+		
+		<span id="edit-warning"></span>
+		<button id="save-button">Confirm Changes</button>
+		<button onclick="closeEditContact()">Cancel</button>
 	</div>
 </div>
 

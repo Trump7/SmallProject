@@ -174,7 +174,7 @@ function loadContacts(){
 						tableVals += '<td>' + response.results[i].Name + '</td>';
 						tableVals += '<td>' + response.results[i].Phone + '</td>';
 						tableVals += '<td>' + response.results[i].Email + '</td>';
-						tableVals += '<td><button onclick="editContact(' + response.results[i].ID + ')">Edit</button><button onclick="deleteContact(' + response.results[i].ID + ')">Delete</button></td>';
+						tableVals += '<td><button onclick="openEditContact(' + response.results[i].ID, i + ')">Edit</button><button onclick="deleteContact(' + response.results[i].ID + ')">Delete</button></td>';
 						tableVals += '</tr>';
 					}
 					
@@ -219,7 +219,7 @@ function searchContacts(){
 						tableVals += '<td>' + result.Name + '</td>';
 						tableVals += '<td>' + result.Phone + '</td>';
 						tableVals += '<td>' + result.Email + '</td>';
-						tableVals += '<td><button onclick="editContact(' + result.ID + ')">Edit</button><button onclick="deleteContact(' + result.ID + ')">Delete</button></td>';
+						tableVals += '<td><button onclick="openEditContact(' + result.ID, i + ')">Edit</button><button onclick="deleteContact(' + result.ID + ')">Delete</button></td>';
 						tableVals += '</tr>'
 					}
 					
@@ -236,8 +236,73 @@ function deleteContact(index){
 	alert("Are you sure you want to delete this contact?");
 }
 
-function editContact(index){
+function editContact(id){
+	const name = document.getElementById('e.name').value;
+	const phone = document.getElementById('e.phone').value;
+	const mail = document.getElementById('e.email').value;
 	
+	//verification that name is present
+	if(name == ''){
+		document.getElementById('add-warning').innerHTML = "Warning: Name must be present";
+		return;
+	}
+	
+	//edit contact
+	let data = {Name: name, Phone: phone, Email: mail, ID: index};
+	let jsonPayload = JSON.stringify(data);
+	
+	let url = urlBase + '/EditContact.' + extension;
+	let xhr = new XMLHttpRequest();
+	
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	
+	try{
+		xhr.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				let response = JSON.parse(xhr.responseText);
+				
+				if("success" in response){
+					document.getElementById('edit-warning').innerHTML = "Contact Changed Successfully";
+					setTimeout(function(){loadContacts(); closeEditContact();}, 2000);
+				}
+				else{
+					document.getElementById("edit-warning").innerHTML = "Error: Could not submit edit.";
+				}
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err){
+		document.getElementById("edit-warning").innerHTML = err.message;
+	}
+}
+
+function openEditContact(id, index){
+	const window = document.getElementById('edit-window');
+	window.style.display = 'block';
+	
+	const row = document.getElementById('contacts-contents').rows[index];
+	
+	document.getElementById('e.name').value = row.cells[0].textContent;
+	document.getElementById('e.phone').value = row.cells[1].textContent;
+	document.getElementById('e.email').value = row.cells[2].textContent;
+	
+	const saveButton = document.getElementById('save-button');
+		saveButton.onclick = function () {
+        editContact(id);
+    };
+}
+
+function closeEditContact(){
+	//hide the add window
+	const window = document.getElementById('edit-window');
+	window.style.display = 'none';
+	//clear contents of add window
+	document.getElementById('e.name').value = '';
+	document.getElementById('e.phone').value = '';
+	document.getElementById('e.email').value = '';
+	document.getElementById('edit-warning').innerHTML = "";
 }
 
 
