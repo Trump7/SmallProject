@@ -233,7 +233,12 @@ function searchContacts(){
 }
 
 function deleteContact(index){
-	alert("Are you sure you want to delete this contact?");
+	if(confirm("Are you sure you want to delete this contact?") == true){
+		alert("contact deleted");
+	}
+	else{
+		alert("contact was not deleted");
+	}
 }
 
 function editContact(id){
@@ -248,7 +253,7 @@ function editContact(id){
 	}
 	
 	//edit contact
-	let data = {Name: name, Phone: phone, Email: mail, ID: index};
+	let data = {Name: name, Phone: phone, Email: mail, ID: id};
 	let jsonPayload = JSON.stringify(data);
 	
 	let url = urlBase + '/EditContact.' + extension;
