@@ -189,32 +189,45 @@ function loadContacts(){
 //function to search through existing contacts
 function searchContacts(){
 	const searchBox = document.getElementById('contactSearch').value.toLowerCase();
-	const rows = document.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
 	
-	console.log('Search Box:', searchBox);
-	console.log('First row:', rows);
+	//get data together
+	const {userId} = getUserData();
+	let data = {search: searchBox, UserID: userId};
 	
-	for(let i = 0; i < rows.length; i++){
-		const nameCell = rows[i].getElementsByTagName('td')[0];
-		const phoneCell = rows[i].getElementsByTagName('td')[1];
-		const emailCell = rows[i].getElementsByTagName('td')[2];
-		
-		//debugging
-		console.log('Name Cell:', nameCell);
-		console.log('Phone Cell:', phoneCell);
-		console.log('Email Cell:', emailCell);
-		
-		const name = nameCell.textContent.toLowerCase();
-		const phone = phoneCell.textContent.toLowerCase();
-		const email = emailCell.textContent.toLowerCase();
-		
-		if(name.includes(searchBox) || phone.includes(searchBox) || email.includes(searchBox)){
-			rows[i].style.display = '';
-		}
-		else{
-			rows[i].style.display = 'none';
-		}
+	
+	let jsonPayload = JSON.stringify(data);
+	
+	let url = urlBase + '/SearchContacts.' + extension;
+	let xhr = new XMLHttpRequest();
+	
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	
+	try{
+		xhr.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				let response = JSON.parse(xhr.responseText);
+				
+				if("results" in response){
+					let tableVals = '';
+					
+					for(let i = 0; i < response.results.length; i++){
+						const result = response.results[i];
+						
+						tableVals += '<tr>';
+						tableVals += '<td>' + result.Name + '</td>';
+						tableVals += '<td>' + result.Phone + '</td>';
+						tableVals += '<td>' + result.Email + '</td>';
+						tableVals += '</tr>'
+					}
+					
+					document.getElementById("contacts-contents").innerHTML = tableVals;
+				}
+			}
+		};
+		xhr.send(jsonPayload);
 	}
+	catch(err){}
 }
 
 
