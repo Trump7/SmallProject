@@ -98,6 +98,7 @@ nav a:hover{
 	max-width: 1200px;
 	min-width: 600px;
     margin: 20px auto;
+	overflow-y: auto;
 }
 .action-box{
 	display: flex;
