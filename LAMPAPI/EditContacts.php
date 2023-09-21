@@ -31,7 +31,8 @@
 		$conn->close();
 
 		// Return without any error
-		returnWithError("");
+		sendResultInfoAsJson('{"success":"contact changed"}');
+
 	}
 
 	function getRequestInfo()
