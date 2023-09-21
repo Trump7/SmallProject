@@ -234,10 +234,35 @@ function searchContacts(){
 
 function deleteContact(index){
 	if(confirm("Are you sure you want to delete this contact?") == true){
-		alert("contact deleted");
-	}
-	else{
-		alert("contact was not deleted");
+		//delete contact
+		let data = {ID: index};
+		let jsonPayload = JSON.stringify(data);
+	
+		let url = urlBase + '/DeleteContacts.' + extension;
+		let xhr = new XMLHttpRequest();
+	
+		xhr.open("POST", url, true);
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	
+		try{
+			xhr.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					let response = JSON.parse(xhr.responseText);
+				
+					if("success" in response){
+						loadContacts();
+						alert("Success! Contact was deleted");
+					}
+					else{
+						alert("Error: Could not delete Contact");
+					}
+				}
+			};
+			xhr.send(jsonPayload);
+		}
+		catch(err){
+			alert("Error: " + err);
+		}
 	}
 }
 
@@ -248,7 +273,7 @@ function editContact(id){
 	
 	//verification that name is present
 	if(name == ''){
-		document.getElementById('add-warning').innerHTML = "Warning: Name must be present";
+		document.getElementById('edit-warning').innerHTML = "Warning: Name must be present";
 		return;
 	}
 	
