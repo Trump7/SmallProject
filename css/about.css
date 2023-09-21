@@ -108,9 +108,9 @@ nav a:hover{
 /* Updated styles for the individual images to keep them circular */
 #APIbox img, #PMnDatabasebox img, #Frontendbox img {
     height: 140px;
-    width: 140px; /* Add this line to maintain the circular shape */
+    width: 140px;
     border-radius: 50%;
-    margin: 0 110px; /* Adjust margin as needed */
+    margin: 0 110px;
 }
 
 /* Center descriptions under images */
