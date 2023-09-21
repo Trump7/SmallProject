@@ -28,7 +28,7 @@
 		$conn->close();
 
 		// Return without any error
-		returnWithError("");
+        	sendResultInfoAsJson('{"success":"contact deleted"}');
 	}
 
 	function getRequestInfo()
