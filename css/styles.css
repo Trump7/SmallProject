@@ -259,6 +259,26 @@ nav a:hover{
 	background-color: #ffe249;
 }
 
+/*Edit and Delete Buttons*/
+.edit-button {
+    padding: 5px 30px;
+    background-color: #f8db6e;
+    border: 2px solid #000;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+}
+
+/* Delete button style */
+.delete-button {
+    padding: 5px 30px;
+    background-color: #f8db6e;
+    border: 2px solid #000;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+}
+
 
 
 /*Contacts table*/
