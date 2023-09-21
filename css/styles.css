@@ -98,14 +98,18 @@ nav a:hover{
 	max-width: 1200px;
 	min-width: 600px;
     margin: 20px auto;
-	overflow-y: auto;
 }
+
 .action-box{
 	display: flex;
 	width: 100%;
 	margin-bottom: 10px;
 }
 
+#contacts-contents{
+	max-height: 500px;
+	overflow-y: auto;
+}
 /*Search Box*/
 .search-box{
 	display: flex;
