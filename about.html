@@ -1,11 +1,16 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <link href="css/styles.css" rel="stylesheet">	
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-	<link rel="stylesheet" href="css/about.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
+	<head>
+		<meta charset = "utf-8">
+		<!--This will make website display properly on all devices-->
+		<meta name="viewport" content=<width="device-width, initial-scale=1">
+		<link href="css/styles.css" rel="stylesheet">	
+		<title>Laugh Sender</title>
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+		<link rel="stylesheet" href="css/about.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
 
-</head>
+	</head>
 <body>
 	<header>
         <div class="navbar">
@@ -18,7 +23,11 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li id="navLogin"><a href="login.html">Login</a></li>
+					<li><a href="about.html">About</a></li>
+					<li id="manButt"><a href="color.html">Manager</a></li>
+					<li id="userNamePrompt"><span id="userName"></span></li>
+					<li id="logoutButt"><a href="#" onclick="doLogout();">Log Out</a></li>
+					<li id="loginButt"><a href="login.html">Login</a></li>
                 </ul>	
             </nav>
         </div>
@@ -28,29 +37,43 @@
     <div class="aboutDiv" id="aboutDiv">
         <span id="inner-title">Contact Manager for Sending Laughs</span>
         <p id="inner-title2">Meet Our Silly Squad</p>
-        <div id="APIbox">
-            <img id="cadenPic" src="images/Caden.jpeg" alt="Caden"/>
-            <img id="samPic" src="images/Sam.jpeg" alt="Sam"/>
-            <p id="aboutCaden">Meet Caden Brown! Caden is a computer science major at UCF and worked on the APIs for the Contact Manager.</p>
-            <p id="aboutSam">Meet Sammy Elomari! Sammy is a computer science major at UCF and worked on the APIs for the Contact Manager.</p>
+        
+		<div id="APIbox">
+			<div class="info-top">
+				<img id="cadenPic" src="images/Caden.jpeg" alt="Caden"/>
+				<img id="samPic" src="images/Sam.jpeg" alt="Sam"/>
+            </div>
+			<div class="info-bottom">
+				<p id="aboutCaden">Meet Caden Brown! Caden is a computer science major at UCF and worked on the APIs for the Contact Manager.</p>
+				<p id="aboutSam">Meet Sammy Elomari! Sammy is a computer science major at UCF and worked on the APIs for the Contact Manager.</p>
+			</div>
         </div>    
-        <div id="PMnDatabasebox">
-            <img id="leoPic" src="images/Leo.jpeg" alt="Leo"/>
-            <img id="timPic" src="images/Tim.jpeg" alt="Tim"/>
-            <p id="aboutLeo">Meet Leonardo Pariano! Leo is a computer science major at UCF and worked on the Database for the Contact Manager.</p>
-            <p id="aboutTim">Meet Timothy Kovacs! Tim is a computer science major at UCF and he was the Project Manager for the Contact Manager.</p>
+        
+		<div id="PMnDatabasebox">
+			<div class="info-top">
+				<img id="leoPic" src="images/Leo.jpeg" alt="Leo"/>
+				<img id="timPic" src="images/Tim.jpeg" alt="Tim"/>
+            </div>
+			<div class="info-bottom">
+				<p id="aboutLeo">Meet Leonardo Pariano! Leo is a computer science major at UCF and worked on the Database for the Contact Manager.</p>
+				<p id="aboutTim">Meet Timothy Kovacs! Tim is a computer science major at UCF and he was the Project Manager for the Contact Manager.</p>
+			</div>
         </div>    
-        <div id="Frontendbox">
-            <img id="sanyaPic" src="images/Sanya.jpg" alt="Sanya"/>
-            <img id="mattPic" src="images/Matt.jpg" alt="Matt"/>
-            <p id="aboutSanya">Meet Sanya Wadhwa! Sanya is a computer engineering major at UCF and worked on the Front-end for the Contact Manager.</p>
-            <p id="aboutMatt">Meet Matthew Trump! Matt is a computer engineering major at UCF and worked on the Front-end for the Contact Manager.</p>
-        </div>                          
-            
-        </div>
+        
+		<div id="Frontendbox">
+			<div class="info-top">
+				<img id="sanyaPic" src="images/Sanya.jpg" alt="Sanya"/>
+				<img id="mattPic" src="images/Matt.jpg" alt="Matt"/>
+            </div>
+			<div class="info-bottom">
+				<p id="aboutSanya">Meet Sanya Wadhwa! Sanya is a computer engineering major at UCF and worked on the Front-end for the Contact Manager.</p>
+				<p id="aboutMatt">Meet Matthew Trump! Matt is a computer engineering major at UCF and worked on the Front-end for the Contact Manager.</p>
+			</div>
+		</div>                                
     </div>
 </div>
-<script type="text/javascript" src="js/code.js"></script>
+
+	<script type="text/javascript" src="js/code.js"></script>
 
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
