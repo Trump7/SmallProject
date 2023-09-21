@@ -260,6 +260,11 @@ nav a:hover{
 }
 
 /*Edit and Delete Buttons*/
+.button-cell{
+	width: 150px;
+	text-align: center;
+}
+
 .edit-button {
     padding: 5px 30px;
     background-color: #f8db6e;

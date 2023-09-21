@@ -174,7 +174,7 @@ function loadContacts(){
 						tableVals += '<td>' + response.results[i].Name + '</td>';
 						tableVals += '<td>' + response.results[i].Phone + '</td>';
 						tableVals += '<td>' + response.results[i].Email + '</td>';
-						tableVals += '<td><button class="edit-button" onclick="openEditContact(' + response.results[i].ID + ',' + i + ')">Edit</button><button class="delete-button" onclick="deleteContact(' + response.results[i].ID + ')">Delete</button></td>';
+						tableVals += '<td class="button-cell"><button class="edit-button" onclick="openEditContact(' + response.results[i].ID + ',' + i + ')">Edit</button><button class="delete-button" onclick="deleteContact(' + response.results[i].ID + ')">Delete</button></td>';
 						tableVals += '</tr>';
 					}
 					
