@@ -219,10 +219,14 @@ function searchContacts(){
 						tableVals += '<td>' + result.Name + '</td>';
 						tableVals += '<td>' + result.Phone + '</td>';
 						tableVals += '<td>' + result.Email + '</td>';
-						tableVals += '<td><button class="edit-button" onclick="openEditContact(' + result.ID + ',' + i + ')">Edit</button><button class="delete-button" onclick="deleteContact(' + result.ID + ')">Delete</button></td>';
+						tableVals += '<td class="button-cell"><button class="edit-button" onclick="openEditContact(' + result.ID + ',' + i + ')">Edit</button><button class="delete-button" onclick="deleteContact(' + result.ID + ')">Delete</button></td>';
 						tableVals += '</tr>'
 					}
 					
+					document.getElementById("contacts-contents").innerHTML = tableVals;
+				}
+				else{
+					let tableVals = '';
 					document.getElementById("contacts-contents").innerHTML = tableVals;
 				}
 			}
