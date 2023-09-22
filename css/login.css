@@ -1,39 +1,47 @@
 body{
 	background-image: url('../images/background.jpg');
-	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%,  transparent 100%);
 	background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-	margin-top: -28px;
-	margin-left: 0px;
+	margin: 0px;
 	padding: 0px;
 }
-
-header{
+header {
+	position: fixed;
+	top: 0; /* Keep the nav bar fixed at the top */
 	width: 100%;
 	height: 100px;
 	background: #99dfe6;
-	position: fixed;
 	border-bottom: 2px solid #000000;
 	border-radius: 0 0 10px 10px;
-	margin-top: -174px;
-}
+	justify-content: space-between;
+	align-items: center;
+	display: flex;
+	z-index: 2;
+  }
 
 .navbar{
 	display: flex; /* Creating the box affect for navigation order */
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	margin: 0px auto;
+	margin: 0 auto;
 	padding: 0 20px;
 	height: 100px;
 }
 
 .logo img{
-	float: left;
     max-height: 100px;
-    max-width: 100%;
+    width: auto;
+}
+
+.title{
+	font-family: 'Boogaloo', cursive;
+	font-size: 20px;
+	flex-grow: 1;
+	text-shadow: 2px 2px 0 #000;
+	color: #f8db6e;
 }
 
 nav ul{
@@ -44,10 +52,7 @@ nav ul{
 }
 
 nav li{
-	margin-right: -15px;
-}
-#navSignup{
-	padding-right: 25px;
+	margin: 0 7px;
 }
 
 nav a{
@@ -56,7 +61,6 @@ nav a{
 	border: 2px solid #000000; /*Border around buttons*/
 	border-radius: 5px; /*Round corners*/
 	color: #000000; /*Font color on buttons*/
-	margin-right: 30px; /*How far buttons are from right*/
 	text-decoration: none; /*No underline*/
 	background-color: #f8db6e; /*button background color*/
 }
@@ -73,118 +77,97 @@ nav a:hover{
 	background-color: #ffe249; /*button color when mouse hovers over*/
 }
 
-#loginDiv {
-    margin-top: 10%;
-    margin-left: 30%;
-    border-radius: 10px 10px 10px 10px;
-    font-size: 15px;
-    width: 35%;
-    padding: 25px;
-    background-color: white;
-    box-shadow: 15px 15px 20px 4px;
-    height: 37%;
+#container-wrapper {
+	margin-top: 12.5%; /* 10% from the top */
 }
-/* #welcomeBackDiv{
-	background-color: powderblue;
-	margin-left: 643px;
-	margin-top: -332px;
-	height: 334px;
-	width: 29%;
-	border-radius: 10px 10px 10px 10px;
-	box-shadow: 15px 15px 20px 4px;
-	position: fixed;
 
-} */
-/* #WelcomeMessage{
+#container{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items at the top of the container */
+  margin: 0 10%; /* Adjust the margin as needed */
+}
+
+#loginDiv,
+#welcomeBackDiv {
+  flex: 1; /* Make both divs grow to fill available space */
+  margin: 0 1%; /* Create a 2% space between divs */
+}
+
+#loginDiv{
 	text-align: center;
-	font-size: 45px;
+    border-radius: 20px;
+    font-size: 20px;
 	font-family: 'Boogaloo', cursive;
-	padding-top: 32px;
-	margin-bottom: 70px;
-} */
-
-#loginName{
-	font-size: 20px;
+    width: 45%;
+    padding: 20px;
+	/* margin-left: 10%; */
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
-#loginPassword{
-	font-size: 20px;
+#inner-title {
+    font-size: 170%;
+    color:darkgoldenrod;
 }
-
-input[type="text"], input[type="password"]{
-	border-radius: 7px;
-	text-align: center;
-	width: 80%;
-	margin-left: 10%;
-	margin-bottom: 5%;
-	font-family: serif;
+input[type="text"]{
+    border-radius: 0px;
+    text-align: center;
+    width: 60%;
+    height: 30px;
+    margin-top: 7%;
+    margin-bottom: 4%;
+    font-family: serif;
+    font-size: medium;
+    border-radius: 7px;
 }
-
+input[type="password"] {
+    border-radius: 0px;
+    text-align: center;
+    width: 60%;
+    height: 30px;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    font-family: serif;
+    font-size: medium;
+    border-radius: 7px;
+}
 #RememberMeChckBox{
-	margin-left: -4%;
+	margin-left: -32%;
 }
 
 #loginButton{
-	font-size: 16px;
-	border-radius: 5px;
-	width: 80%;
-	height: 30px;
-	margin-top: 12px;
-	margin-bottom:25px;
-	margin-left: 10%;
-	font-family: serif;
-	color: black;
-	background-color: lightcyan;
+	margin-top: 5%;
+    margin-bottom: 5%;
+    width: 60%;
+    border-radius: 7px;
+    height: 25px;
+    color: black;
+    background-color: lightskyblue;
 }
-
-#inner-title{
-	display: inline-block;
-	margin-top: 20px;
-	font-size: 22px;
-	width: 90%;
-	text-align: center;
-	margin-left: 25px;
-	margin-bottom: 10%;
-	font-family: initial;
-	color: darkturquoise;
+#welcomeBackDiv {
+	background-color: lightskyblue;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: 'Boogaloo', cursive;
+    width: 45%;
+    padding: 2.5%;
+    background-color: rgba(173, 216, 230, 0.9);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
-input[type="checkbox"]{
-	margin-left: 96px;
-	margin-bottom: 2%;
-	font-family: serif;
-	font-size: 15px;
+#pic {
+    height: 100px;
+    margin-top: -7%;
+	margin-bottom: 7%;
 }
-.psw{
-	margin-left: 16%;
+#WelcomeMessage{
+	font-size: xxx-large;
+	margin-bottom: 9.5%;
 }
-
 #NoAccount{
-	margin-left: 20%;
-	/* margin-top: 58px; */
+	margin-bottom: 4%;
 }
 
-#signUpButton{
-	font-size: 16px;
-	border-radius: 5px;
-	width: 25%;
-	margin-top: -10px;
-	margin-bottom:25px;
-	margin-left: 39%;
-	font-family: serif;
-	color: black;
-	background-color: white;
-}
-.title{
-	font-family: 'Boogaloo', cursive;
-	font-size: 20px;
-	flex-grow: 1;
-	text-shadow: 2px 2px 0 #000;
-	color: #f8db6e;
-}
-
-#pic{
-	height: 80px;
-	margin-top: -65px;
-	margin-left: 139px;
-	margin-bottom: 10px;
-}
