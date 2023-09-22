@@ -46,10 +46,9 @@
 	<div class="action-box">
 		<div class="search-box">
 			<input type="text" id="contactSearch" placeholder="Search Contacts..." oninput="searchContacts()">
-			<button onclick="searchContacts()">Search</button>
 		</div>
 		<div class="add-box">
-			<button onclick="openAddContact()">Add Contact</button>
+			<button onclick="openAddContact()" title="Open add contact form">Add Contact</button>
 		</div>
 	</div>
 	
@@ -75,8 +74,8 @@
 		<input type="text" id="email" placeholder="joe@blow.com">
 	
 		<span id="add-warning"></span>
-		<button onclick="addContact()">Save</button>
-		<button onclick="closeAddContact()">Cancel</button>
+		<button onclick="addContact()" title="Add contact to manager">Save</button>
+		<button onclick="closeAddContact()" title="Discard adding a contact">Cancel</button>
 	</div>
 </div>
 
@@ -90,8 +89,8 @@
 		<input type="text" id="e.email">
 		
 		<span id="edit-warning"></span>
-		<button id="save-button">Confirm Changes</button>
-		<button onclick="closeEditContact()">Cancel</button>
+		<button id="save-button" title="Change contact information">Accept Changes</button>
+		<button onclick="closeEditContact()" title="Discard changes">Cancel</button>
 	</div>
 </div>
 

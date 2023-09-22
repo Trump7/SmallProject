@@ -124,20 +124,6 @@ nav a:hover{
 	border-radius: 5px;
 }
 
-.search-box button{
-	padding: 5px 20px;
-	background-color: #f8db6e;
-	border: 2px solid #000;
-	border-radius: 5px;
-	color: #000;
-	cursor: pointer;
-	margin-left: 5px;
-}
-
-.search-box button:hover{
-	background-color: #ffe249;
-}
-
 /* Add Box */
 .add-box {
 	display: flex;
