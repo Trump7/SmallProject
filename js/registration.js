@@ -33,11 +33,13 @@ function registerUser() {
         return;
     }	
 	
+	let hash = md5( password );
+	
 	//if the user is not available it will stop here
 	//if it is available, it will create the account
 	checkUserAvailable(login, function(userAvailable){
 		if(userAvailable){
-			createUser(firstName, lastName, login, password, function(regResult){
+			createUser(firstName, lastName, login, hash, function(regResult){
 				if(regResult == "true"){
 					//after creating the account if there were no errors, a success message will be displayed
 					document.getElementById("registerResult").innerHTML = "The account has been successfully created! Redirecting to login...";
