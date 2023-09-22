@@ -90,6 +90,7 @@ nav a:hover{
     position: relative;
     top: 175px; /*height from navbar*/
 	min-width: 760px;
+	max-width: 760px;
 	z-index: 1;
 }
 
