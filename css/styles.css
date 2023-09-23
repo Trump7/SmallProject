@@ -257,25 +257,17 @@ nav a:hover{
 	text-align: center;
 }
 
-.edit-button {
-    padding: 5px 30px;
-    background-color: #f8db6e;
+.edit-button, .delete-button {
     border: 2px solid #000;
     border-radius: 5px;
-    color: #000;
-    cursor: pointer;
+	width: 32px;
+	margin-right: 5px;
+	cursor: pointer;
 }
 
-/* Delete button style */
-.delete-button {
-    padding: 5px 30px;
-    background-color: #f8db6e;
-    border: 2px solid #000;
-    border-radius: 5px;
-    color: #000;
-    cursor: pointer;
+.edit-button:hover, .delete-button:hover{
+	filter: brightness(1.2);
 }
-
 
 
 /*Contacts table*/

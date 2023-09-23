@@ -173,7 +173,10 @@ function loadContacts(){
 						tableVals += '<td>' + response.results[i].Name + '</td>';
 						tableVals += '<td>' + response.results[i].Phone + '</td>';
 						tableVals += '<td>' + response.results[i].Email + '</td>';
-						tableVals += '<td class="button-cell"><button class="edit-button" onclick="openEditContact(' + response.results[i].ID + ',' + i + ')">Edit</button><button class="delete-button" onclick="deleteContact(' + response.results[i].ID + ')">Delete</button></td>';
+						tableVals += '<td class="button-cell">'; 
+						tableVals += '<img class="edit-button" src="images/edit.png" title="Edit" onclick="openEditContact(' + response.results[i].ID + ',' + i + ')">';
+						tableVals += '<img class="delete-button" src="images/delete.png" title="Delete" onclick="deleteContact(' + response.results[i].ID + ')">';
+						tableVals += '</td>';
 						tableVals += '</tr>';
 					}
 					
@@ -218,8 +221,11 @@ function searchContacts(){
 						tableVals += '<td>' + result.Name + '</td>';
 						tableVals += '<td>' + result.Phone + '</td>';
 						tableVals += '<td>' + result.Email + '</td>';
-						tableVals += '<td class="button-cell"><button class="edit-button" onclick="openEditContact(' + result.ID + ',' + i + ')">Edit</button><button class="delete-button" onclick="deleteContact(' + result.ID + ')">Delete</button></td>';
-						tableVals += '</tr>'
+						tableVals += '<td class="button-cell">'; 
+						tableVals += '<img class="edit-button" src="images/edit.png" title="Edit" onclick="openEditContact(' + result.ID + ',' + i + ')">';
+						tableVals += '<img class="delete-button" src="images/delete.png" title="Delete" onclick="deleteContact(' + result.ID + ')">';
+						tableVals += '</td>';
+						tableVals += '</tr>';
 					}
 					
 					document.getElementById("contacts-contents").innerHTML = tableVals;
