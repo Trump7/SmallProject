@@ -273,15 +273,37 @@ nav a:hover{
 
 
 /*Contacts table*/
-#contacts{
+table{
+	font-family: Arial;
 	border-collapse: collapse;
 	width: 100%;
-	margin-top: 20px;
-	background-color: #FFFFFF;
+	border: none;
 }
 
-#contacts th, #contacts td{
-	border: 1px solid #000000;
+table td, #contacts th{
 	padding: 8px;
+}
+
+table tr:nth-child(odd){
+	background-color: #f2f2f2;
+}
+
+table tr:hover{
+	background-color: #ddd;
+}
+
+table th{
+	padding-top: 12px;
+	padding-bottom: 12px;
 	text-align: left;
+	background-color: #99dfe6;
+	color: #000000;
+}
+
+td:first-child, th:first-child{
+	border-radius: 10px 0 0 10px;
+}
+
+td:last-child, th:last-child{
+	border-radius: 0 10px 10px 0;
 }
