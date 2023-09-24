@@ -79,7 +79,7 @@
 		<input type="text" id="email" placeholder="name@email.com">
 		
 		<script type="text/javascript">
-		phone.addEventListener('keyup', function() {
+		phone.addEventListener('keydown', function() {
 			if(event.key != 'Backspace' && (phone.value.length === 3 || phone.value.length === 7)){
 				phone.value += '-';
 			}
@@ -95,16 +95,16 @@
 <div class="edit-contacts-window" id="edit-window">
 	<div class="edit-Form">
 		<label>Name:</label>
-		<input type="text" id="e.name">
+		<input type="text" id="ename">
 		<label>Phone:</label>
-		<input type="tel" maxlength="12" id="e.phone">
+		<input type="tel" maxlength="12" id="ephone">
 		<label>Email:</label>
-		<input type="text" id="e.email">
+		<input type="text" id="eemail">
 		
 		<script type="text/javascript">
-		e.phone.addEventListener('keyup', function() {
-			if(event.key != 'Backspace' && (e.phone.value.length === 3 || e.phone.value.length === 7)){
-				e.phone.value += '-';
+		ephone.addEventListener('keydown', function() {
+			if(event.key != 'Backspace' && (ephone.value.length === 3 || ephone.value.length === 7)){
+				ephone.value += '-';
 			}
 		});
 		</script>

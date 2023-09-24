@@ -300,9 +300,9 @@ function closeDeleteContact(){
 }
 
 function editContact(id){
-	const name = document.getElementById('e.name').value;
-	const phone = document.getElementById('e.phone').value;
-	const mail = document.getElementById('e.email').value;
+	const name = document.getElementById('ename').value;
+	const phone = document.getElementById('ephone').value;
+	const mail = document.getElementById('eemail').value;
 	
 	//verification that name is present
 	if(name == ''){
@@ -348,9 +348,9 @@ function openEditContact(id, index){
 	
 	const row = document.getElementById('contacts-contents').rows[index];
 	
-	document.getElementById('e.name').value = row.cells[0].textContent;
-	document.getElementById('e.phone').value = row.cells[1].textContent;
-	document.getElementById('e.email').value = row.cells[2].textContent;
+	document.getElementById('ename').value = row.cells[0].textContent;
+	document.getElementById('ephone').value = row.cells[1].textContent;
+	document.getElementById('eemail').value = row.cells[2].textContent;
 	
 	const saveButton = document.getElementById('save-button');
 		saveButton.onclick = function () {
@@ -363,9 +363,9 @@ function closeEditContact(){
 	const window = document.getElementById('edit-window');
 	window.style.display = 'none';
 	//clear contents of add window
-	document.getElementById('e.name').value = '';
-	document.getElementById('e.phone').value = '';
-	document.getElementById('e.email').value = '';
+	document.getElementById('ename').value = '';
+	document.getElementById('ephone').value = '';
+	document.getElementById('eemail').value = '';
 	document.getElementById('edit-warning').innerHTML = "";
 }
 
