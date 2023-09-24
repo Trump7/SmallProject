@@ -175,7 +175,7 @@ function loadContacts(){
 						tableVals += '<td>' + response.results[i].Email + '</td>';
 						tableVals += '<td class="button-cell">'; 
 						tableVals += '<img class="edit-button" src="images/edit.png" title="Edit" onclick="openEditContact(' + response.results[i].ID + ',' + i + ')">';
-						tableVals += '<img class="delete-button" src="images/delete.png" title="Delete" onclick="deleteContact(' + response.results[i].ID + ')">';
+						tableVals += '<img class="delete-button" src="images/delete.png" title="Delete" onclick="openDeleteContact(' + response.results[i].ID + ')">';
 						tableVals += '</td>';
 						tableVals += '</tr>';
 					}
@@ -223,7 +223,7 @@ function searchContacts(){
 						tableVals += '<td>' + result.Email + '</td>';
 						tableVals += '<td class="button-cell">'; 
 						tableVals += '<img class="edit-button" src="images/edit.png" title="Edit" onclick="openEditContact(' + result.ID + ',' + i + ')">';
-						tableVals += '<img class="delete-button" src="images/delete.png" title="Delete" onclick="deleteContact(' + result.ID + ')">';
+						tableVals += '<img class="delete-button" src="images/delete.png" title="Delete" onclick="openDeleteContact(' + result.ID + ')">';
 						tableVals += '</td>';
 						tableVals += '</tr>';
 					}
@@ -242,37 +242,56 @@ function searchContacts(){
 }
 
 function deleteContact(index){
-	if(confirm("Are you sure you want to delete this contact?") == true){
-		//delete contact
-		let data = {ID: index};
-		let jsonPayload = JSON.stringify(data);
-	
-		let url = urlBase + '/DeleteContacts.' + extension;
-		let xhr = new XMLHttpRequest();
-	
-		xhr.open("POST", url, true);
-		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	
-		try{
-			xhr.onreadystatechange = function(){
-				if(this.readyState == 4 && this.status == 200){
-					let response = JSON.parse(xhr.responseText);
-				
-					if("success" in response){
-						loadContacts();
-						alert("Success! Contact was deleted");
-					}
-					else{
-						alert("Error: Could not delete Contact");
-					}
+	//delete contact
+	let data = {ID: index};
+	let jsonPayload = JSON.stringify(data);
+
+	let url = urlBase + '/DeleteContacts.' + extension;
+	let xhr = new XMLHttpRequest();
+
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try{
+		xhr.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				let response = JSON.parse(xhr.responseText);
+			
+				if("success" in response){
+					loadContacts();
+					document.getElementById('delete-warning').innerHTML = "Contact Deleted";
 				}
-			};
-			xhr.send(jsonPayload);
-		}
-		catch(err){
-			alert("Error: " + err);
-		}
+				else{
+					document.getElementById('delete-warning').innerHTML = "Error: Could not delete Contact";
+				}
+			}
+		};
+		xhr.send(jsonPayload);
 	}
+	catch(err){
+		alert("Error: " + err);
+	}
+}
+
+//used to open the delete contact window
+function openDeleteContact(index){
+	//show the delete window
+	const window = document.getElementById('delete-window');
+	window.style.display = 'block';
+	
+	const yes = document.getElementById('yes-button');
+		yes.onclick = function () {
+        deleteContact(index);
+    };
+}
+
+//used to clear and close the delete contact window
+function closeDeleteContact(){
+	//hide the delete window
+	const window = document.getElemnentById('delete-window');
+	window.style.display = 'none';
+	//clear contents of delete warning
+	document.getElementById('delete-warning').innerHTML = "";
 }
 
 function editContact(id){
