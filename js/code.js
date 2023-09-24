@@ -303,10 +303,17 @@ function editContact(id){
 	const name = document.getElementById('ename').value;
 	const phone = document.getElementById('ephone').value;
 	const mail = document.getElementById('eemail').value;
+	const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
 	
 	//verification that name is present
 	if(name == ''){
 		document.getElementById('edit-warning').innerHTML = "Warning: Name must be present";
+		return;
+	}
+	
+	//verification that phone number has only numbers
+	if(!phonePattern.test(phone)){
+		document.getElementById('add-warning').innerHTML = "Warning: Phone number must be numerical";
 		return;
 	}
 	
@@ -394,10 +401,17 @@ function addContact(){
 	const name = document.getElementById('name').value;
 	const phone = document.getElementById('phone').value;
 	const mail = document.getElementById('email').value;
+	const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
 	
 	//verification that name is present
 	if(name == ''){
 		document.getElementById('add-warning').innerHTML = "Warning: Name must be present";
+		return;
+	}
+	
+	//verification that phone number has only numbers
+	if(!phonePattern.test(phone)){
+		document.getElementById('add-warning').innerHTML = "Warning: Phone number must be numerical";
 		return;
 	}
 	
