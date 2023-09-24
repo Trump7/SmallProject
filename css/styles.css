@@ -280,19 +280,26 @@ nav a:hover{
 
 .delete-Form label{
 	font-family: Boogaloo;
-	margin-bottom: 5px;
+	font-size: 30px;
 }
 
 .delete-Form button{
 	display: flex;
 	justify-content: center;
-	padding: 5px 20px;
 	background-color: #f8db6e;
 	border: 2px solid #000;
 	border-radius: 5px;
 	color: #000;
 	cursor: pointer;
 	margin: 5px;
+}
+
+#yes-button{
+	padding: 5px 80px;
+}
+
+#no-button{
+	padding: 5px 71px;
 }
 
 .delete-Form button:hover{
