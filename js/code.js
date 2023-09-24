@@ -470,6 +470,7 @@ function searchJokes(){
 				
 				if("success" in response){
 					const value = response.results[0];
+					console.log("Joke Value:", value);
 					document.getElementById("joke-holder").innerHTML = value;
 				}
 				else{
