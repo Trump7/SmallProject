@@ -12,10 +12,11 @@ function checkAuth() {
 	const isAuthenticated = userId > 0;
 	
 	const loginButt = document.getElementById("loginButt");
-	const logoutButt = document.getElementById("logoutButt");
-	const userNamePrompt = document.getElementById("userNamePrompt");
+	//const logoutButt = document.getElementById("logoutButt");
+	//const userNamePrompt = document.getElementById("userNamePrompt");
 	const manButt = document.getElementById("manButt");
-	const userName = document.getElementById("userName");
+	const dropdown = document.getElementById("userDropdown");
+	//const userName = document.getElementById("userName");
 	
 	//if the user is logged in, it will show logout, prompt, and manager
 	//if the user is not logged in, it will only show the login button
@@ -23,16 +24,19 @@ function checkAuth() {
 	//display = "block" means it's shown (block-level element)
 	if(isAuthenticated){
 		loginButt.style.display = "none";
-		logoutButt.style.display = "block";
-		userNamePrompt.style.display = "block";
+		dropdown.style.display = "block";
+		//logoutButt.style.display = "block";
+		//userNamePrompt.style.display = "block";
 		manButt.style.display = "block";
-		userName.innerHTML = "Logged in as<br>" + firstName + " " + lastName;
+		//userName.innerHTML = "Logged in as<br>" + firstName + " " + lastName;
 	}
 	else{
 		loginButt.style.display = "block";
-		logoutButt.style.display = "none";
-		userNamePrompt.style.display = "none";
+		dropdown.style.display = "none";
+		//logoutButt.style.display = "none";
+		//userNamePrompt.style.display = "none";
 		manButt.style.display = "none";
+		
 		/* Not sure why this isn't working... 
 		Should redirect user from color.html if not logged in
 		if(window.location.href == "color.html"){

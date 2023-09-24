@@ -4,7 +4,6 @@
 		<meta charset = "utf-8">
 		<!--This will make website display properly on all devices-->
 		<meta name="viewport" content=<width="device-width, initial-scale=1">
-		<link href="css/styles.css" rel="stylesheet">	
 		<title>Laugh Sender</title>
 		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
 		<link rel="stylesheet" href="css/about.css">
@@ -25,8 +24,12 @@
                     <li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
 					<li id="manButt"><a href="color.html">Manager</a></li>
-					<li id="userNamePrompt"><span id="userName"></span></li>
-					<li id="logoutButt"><a href="#" onclick="doLogout();">Log Out</a></li>
+					<li class="dropdown" id="userDropdown">
+						<img id="account" src="images/key.png" alt="Account" title="Account Settings"/>
+						<div class="dropdown-content">
+							<a href="#" onclick="doLogout();">Log Out</a>
+						</div>
+					</li>
 					<li id="loginButt"><a href="login.html">Login</a></li>
                 </ul>	
             </nav>

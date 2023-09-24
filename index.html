@@ -25,8 +25,12 @@
 						<li><a href="index.html">Home</a></li>
 						<li><a href="about.html">About</a></li>
 						<li id="manButt"><a href="color.html">Manager</a></li>
-						<li id="userNamePrompt"><span id="userName"></span></li>
-						<li id="logoutButt"><a href="#" onclick="doLogout();">Log Out</a></li>
+						<li class="dropdown" id="userDropdown">
+							<img id="account" src="images/key.png" alt="Account" title="Account Settings"/>
+							<div class="dropdown-content">
+								<a href="#" onclick="doLogout();">Log Out</a>
+							</div>
+						</li>
 						<li id="loginButt"><a href="login.html">Login</a></li>
 					</ul>	
 				</nav>
