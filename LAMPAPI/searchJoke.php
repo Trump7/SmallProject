@@ -24,16 +24,16 @@
 		while($row = $result->fetch_assoc())
 		{
 			$searchCount++;
-      $searchResults = $row["Text"];
+      			$searchResults = $row["Text"];
 		}
 		
 		if($searchCount == 0)
 		{
-			returnWithError('{"Error" : "No Matching Login"}');
+			returnWithError('{"Error" : "No Matching Joke"}');
 		}
 		else
 		{
-			returnWithInfo($login);
+			returnWithInfo($searchResults);
 		}
 		
 		$stmt->close();
