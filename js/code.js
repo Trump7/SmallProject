@@ -313,7 +313,7 @@ function editContact(id){
 	
 	//verification that phone number has only numbers
 	if(!phonePattern.test(phone)){
-		document.getElementById('add-warning').innerHTML = "Warning: Phone number must be numerical";
+		document.getElementById('edit-warning').innerHTML = "Warning: Phone number must be numerical";
 		return;
 	}
 	
