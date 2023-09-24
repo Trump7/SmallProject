@@ -37,7 +37,7 @@ function checkAuth() {
 		//userNamePrompt.style.display = "none";
 		manButt.style.display = "none";
 		
-		if(window.location.href === "color.html"){
+		if(window.location.href.endsWith("color.html")){
 			window.location.href = "login.html";
 		}
 	}
