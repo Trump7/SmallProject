@@ -450,7 +450,7 @@ function addContact(){
 //function to search through dad jokes
 function searchJokes(){
 	//generate random number for joke
-	const randNum = Math.random() * (10 - 1) + 1;
+	const randNum = Math.floor(Math.random() * (Math.floor(10) - Math.ceil(1) + 1) + 1);
 	
 	//get data together
 	let data = {ID: randNum};
