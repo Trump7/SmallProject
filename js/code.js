@@ -37,12 +37,9 @@ function checkAuth() {
 		//userNamePrompt.style.display = "none";
 		manButt.style.display = "none";
 		
-		/* Not sure why this isn't working... 
-		Should redirect user from color.html if not logged in
-		if(window.location.href == "color.html"){
+		if(window.location.href === "color.html"){
 			window.location.href = "login.html";
 		}
-		*/
 	}
 }
 
@@ -264,7 +261,7 @@ function deleteContact(index){
 				if("success" in response){
 					document.getElementById('delete-warning').innerHTML = "Contact Deleted";
 					loadContacts();
-					setTimeout(function(){closeDeleteContact();}, 2000);
+					setTimeout(function(){closeDeleteContact();}, 1500);
 				}
 				else{
 					document.getElementById('delete-warning').innerHTML = "Error: Could not delete Contact";
@@ -312,8 +309,8 @@ function editContact(id){
 	}
 	
 	//verification that phone number has only numbers
-	if(!phonePattern.test(phone)){
-		document.getElementById('edit-warning').innerHTML = "Warning: Phone number must be numerical";
+	if(!phonePattern.test(phone) && phone != ''){
+		document.getElementById('edit-warning').innerHTML = "Warning: Phone number must be numerical and ten digits";
 		return;
 	}
 	
@@ -335,7 +332,7 @@ function editContact(id){
 				if("success" in response){
 					loadContacts();
 					document.getElementById('edit-warning').innerHTML = "Contact Changed Successfully";
-					setTimeout(function(){closeEditContact();}, 2000);
+					setTimeout(function(){closeEditContact();}, 1500);
 				}
 				else{
 					document.getElementById("edit-warning").innerHTML = "Error: Could not submit edit.";
@@ -410,8 +407,8 @@ function addContact(){
 	}
 	
 	//verification that phone number has only numbers
-	if(!phonePattern.test(phone)){
-		document.getElementById('add-warning').innerHTML = "Warning: Phone number must be numerical";
+	if(!phonePattern.test(phone) && phone != ''){
+		document.getElementById('add-warning').innerHTML = "Warning: Phone number must be numerical and ten digits";
 		return;
 	}
 	
@@ -436,7 +433,7 @@ function addContact(){
 				if("success" in response){
 					loadContacts();
 					document.getElementById('add-warning').innerHTML = "Account Successfully Added";
-					setTimeout(function(){closeAddContact();}, 2000);
+					setTimeout(function(){closeAddContact();}, 1500);
 				}
 				else{
 					document.getElementById("add-warning").innerHTML = "Error: Perhaps contact already exists?";
