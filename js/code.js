@@ -258,8 +258,9 @@ function deleteContact(index){
 				let response = JSON.parse(xhr.responseText);
 			
 				if("success" in response){
-					loadContacts();
 					document.getElementById('delete-warning').innerHTML = "Contact Deleted";
+					loadContacts();
+					setTimeout(function(){closeDeleteContact();}, 2000);
 				}
 				else{
 					document.getElementById('delete-warning').innerHTML = "Error: Could not delete Contact";
@@ -321,8 +322,9 @@ function editContact(id){
 				let response = JSON.parse(xhr.responseText);
 				
 				if("success" in response){
+					loadContacts();
 					document.getElementById('edit-warning').innerHTML = "Contact Changed Successfully";
-					setTimeout(function(){loadContacts(); closeEditContact();}, 2000);
+					setTimeout(function(){closeEditContact();}, 2000);
 				}
 				else{
 					document.getElementById("edit-warning").innerHTML = "Error: Could not submit edit.";
@@ -414,8 +416,9 @@ function addContact(){
 				let response = JSON.parse(xhr.responseText);
 				
 				if("success" in response){
+					loadContacts();
 					document.getElementById('add-warning').innerHTML = "Account Successfully Added";
-					setTimeout(function(){loadContacts(); closeAddContact();}, 2000);
+					setTimeout(function(){closeAddContact();}, 2000);
 				}
 				else{
 					document.getElementById("add-warning").innerHTML = "Error: Perhaps contact already exists?";

@@ -278,6 +278,11 @@ nav a:hover{
 	//align-items: center;
 }
 
+.delete-Form label{
+	font-family: Boogaloo;
+	margin-bottom: 5px;
+}
+
 .delete-Form button{
 	display: flex;
 	justify-content: center;
