@@ -288,7 +288,7 @@ function openDeleteContact(index){
 //used to clear and close the delete contact window
 function closeDeleteContact(){
 	//hide the delete window
-	const window = document.getElemnentById('delete-window');
+	const window = document.getElementById('delete-window');
 	window.style.display = 'none';
 	//clear contents of delete warning
 	document.getElementById('delete-warning').innerHTML = "";
