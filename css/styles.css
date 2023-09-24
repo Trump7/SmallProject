@@ -256,7 +256,6 @@ nav a:hover{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
 	position: absolute;
 	top: 20%;
 	left: 0;
@@ -275,7 +274,7 @@ nav a:hover{
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	//align-items: center;
+	align-items: center;
 }
 
 .delete-Form label{
