@@ -72,12 +72,20 @@
 <div class="add-contacts-window" id="add-window">
 	<div class="add-Form">
 		<label>Name:</label>
-		<input type="text" id="name" placeholder="Joe Blow">
+		<input type="text" id="name" placeholder="Jane Doe">
 		<label>Phone:</label>
-		<input type="text" id="phone" placeholder="407-823-2000">
+		<input type="tel" id="phone" maxlength="12" placeholder="407-823-2000">
 		<label>Email:</label>
-		<input type="text" id="email" placeholder="joe@blow.com">
-	
+		<input type="text" id="email" placeholder="name@email.com">
+		
+		<script type="text/javascript">
+		phone.addEventListener('keyup', function() {
+			if(event.key != 'Backspace' && (phone.value.length === 3 || phone.value.length === 7)){
+				phone.value += '-';
+			}
+		});
+		</script>
+		
 		<span id="add-warning"></span>
 		<button onclick="addContact()" title="Add contact to manager">Save</button>
 		<button onclick="closeAddContact()" title="Discard adding a contact">Cancel</button>
@@ -89,9 +97,17 @@
 		<label>Name:</label>
 		<input type="text" id="e.name">
 		<label>Phone:</label>
-		<input type="text" id="e.phone">
+		<input type="tel" maxlength="12" id="e.phone">
 		<label>Email:</label>
 		<input type="text" id="e.email">
+		
+		<script type="text/javascript">
+		e.phone.addEventListener('keyup', function() {
+			if(event.key != 'Backspace' && (e.phone.value.length === 3 || e.phone.value.length === 7)){
+				e.phone.value += '-';
+			}
+		});
+		</script>
 		
 		<span id="edit-warning"></span>
 		<button id="save-button" title="Change contact information">Accept Changes</button>
