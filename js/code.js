@@ -468,7 +468,7 @@ function searchJokes(){
 			if(this.readyState == 4 && this.status == 200){
 				let response = JSON.parse(xhr.responseText);
 				
-				if("success" in response){
+				if("Success" in response){
 					const value = response.results[0];
 					console.log("Joke Value:", value);
 					document.getElementById("joke-holder").innerHTML = value;
