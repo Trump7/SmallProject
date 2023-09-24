@@ -469,7 +469,7 @@ function searchJokes(){
 				let response = JSON.parse(xhr.responseText);
 				
 				if("Success" in response){
-					const value = response.results[0];
+					const value = response.Success;
 					console.log("Joke Value:", value);
 					document.getElementById("joke-holder").innerHTML = value;
 				}
