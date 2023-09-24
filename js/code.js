@@ -446,3 +446,39 @@ function addContact(){
 		document.getElementById("add-warning").innerHTML = err.message;
 	}
 }
+
+//function to search through dad jokes
+function searchJokes(){
+	//generate random number for joke
+	const randNum = Math.random() * (10 - 1) + 1;
+	
+	//get data together
+	let data = {ID: randNum};
+	
+	let jsonPayload = JSON.stringify(data);
+	
+	let url = urlBase + '/SearchJoke.' + extension;
+	let xhr = new XMLHttpRequest();
+	
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	
+	try{
+		xhr.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				let response = JSON.parse(xhr.responseText);
+				
+				if("success" in response){
+					const value = response.results[0];
+					document.getElementById("joke-holder").innerHTML = value;
+				}
+				else{
+					const value = '';
+					document.getElementById("joke-holder").innerHTML = value;
+				}
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err){}
+}

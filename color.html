@@ -16,6 +16,7 @@
 			closeEditContact();
 			closeDeleteContact();
 			loadContacts();
+			searchJokes();
 		});
 	</script>
 	
@@ -55,6 +56,9 @@
 		<div class="add-box">
 			<button onclick="openAddContact()" title="Open add contact form">Add Contact</button>
 		</div>
+	</div>
+	<div class="jokes-box">
+		<span id="joke-holder"></span>
 	</div>
 	
 	<table id="contacts">
