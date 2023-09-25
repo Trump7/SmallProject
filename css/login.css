@@ -112,7 +112,15 @@ nav a:hover{
     color:darkgoldenrod;
 }
 /* Style for input fields */
-input[type="text"], input[type="password"] {
+input[type="text"]{
+    margin-top: 10%;
+    width: 69%;
+    padding: 10px;
+    margin: 15px auto;
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+input[type="password"] {
     margin-top: 10%;
     width: 70%;
     padding: 10px;

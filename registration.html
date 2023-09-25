@@ -30,25 +30,35 @@
 
     <div class="registrationDiv" id="registrationDiv">
         <span id="inner-title">CREATE AN ACCOUNT</span>
-        <label id="firstName">First Name</label>
-        <input type="text" id="registerFirstName" placeholder="Ex. John" />
-        <span class="error-asterisk" id="errorFirstName">*</span><br />
-
-        <label id="lastName">Last Name</label>
-        <input type="text" id="registerLastName" placeholder="Ex. Doe" />
-        <span class="error-asterisk" id="errorLastName">*</span><br />
-
-        <label id="Username">Username</label>
-        <input type="text" id="registerUsername" placeholder="Ex. John101" />
-        <span class="error-asterisk" id="errorUsername">*</span><br />
-
-        <label id="Password">Password</label>
-        <input type="password" id="registerPassword" placeholder="Ex. jdoe#2023" />
-        <span class="error-asterisk" id="errorPassword">*</span><br />
-
-        <label id="PasswordAgain">Confirm Password</label>
-        <input type="password" id="confirmPassword" placeholder="Ex. jdoe#2023" />
-        <span class="error-asterisk" id="errorConfirmPassword">*</span><br />
+        <label id="FirstName" for="registerFirstName">First Name</label>
+        <div class="input-container">
+            <input type="text" id="registerFirstName" placeholder="Ex. John" />
+            <span class="error-asterisk" id="errorFirstName">*</span>
+        </div>
+        
+        <label id="LastName" for="registerLastName">Last Name</label>
+        <div class="input-container">
+            <input type="text" id="registerLastName" placeholder="Ex. Doe" />
+            <span class="error-asterisk" id="errorLastName">*</span>
+        </div>
+        
+        <label id="Username" for="registerUsername">Username</label>
+        <div class="input-container">
+            <input type="text" id="registerUsername" placeholder="Ex. John101" />
+            <span class="error-asterisk" id="errorUsername">*</span>
+        </div>
+        
+        <label id="Password" for="registerPassword">Password</label>
+        <div class="input-container">
+            <input type="password" id="registerPassword" placeholder="Ex. jdoe#2023" />
+            <span class="error-asterisk" id="errorPassword">*</span>
+        </div>
+        
+        <label id="PasswordAgain" for="confirmPassword">Confirm Password</label>
+        <div class="input-container">
+            <input type="password" id="confirmPassword" placeholder="Ex. jdoe#2023" />
+            <span class="error-asterisk" id="errorConfirmPassword">*</span>
+        </div>
 
         <button type="button" id="signUpButton" class="buttons" onclick="registerUser()">Sign Up</button>
         <span id="YesAccount">Already Have an Account? <a href="login.html">Log In</a></span>

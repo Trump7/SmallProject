@@ -96,13 +96,17 @@ nav a:hover{
     color: darkgoldenrod;
     margin-bottom: 5%;
 }
-#firstName, #lastName, #Username, #Password{
+#firstName, #lastName, #Username{
 	font-size: 20px;
     margin-left: -55%;
 }
+#Password{
+	font-size: 20px;
+    margin-left: -57%;
+}
 #PasswordAgain{
 	font-size: 20px;
-    margin-left: -43%;
+    margin-left: -45%;
 }
 
 /* Style for input fields */
@@ -144,10 +148,16 @@ input[type="password"] {
     color: red;
     margin: 10px auto;
 }
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Add spacing between input fields */
+}
+
 /* Style for the error asterisks */
 .error-asterisk {
-	color: red;
-	font-size: 22px;
-	margin-left: 5px;
-	display: none; /* Initially hide the asterisks */
+    color: red;
+    font-size: 18px;
+    margin-left: -2%;
+    display: none; /* Initially hide the asterisks */
 }
