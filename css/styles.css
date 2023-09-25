@@ -163,6 +163,7 @@ nav a:hover{
 .jokes-box{
 	display: flex;
 	width: 100%;
+	font: Boogaloo;
 }
 
 /* Add Box */
