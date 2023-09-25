@@ -67,7 +67,8 @@ function registerUser() {
                 });
             }
             else {
-                document.getElementById("registerResult").innerHTML = "User has already been taken";
+                document.getElementById("userResult").innerHTML = "*User has already been taken";
+				displayErrorAsterisk("errorUsername");
             }
         });
     }
