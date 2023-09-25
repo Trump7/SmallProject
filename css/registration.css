@@ -7,16 +7,19 @@ body{
 	margin: 0px;
 	padding: 0px;
 }
-
-header{
-    margin-top: -132px;
+header {
+	position: fixed;
+	top: 0; /* Keep the nav bar fixed at the top */
 	width: 100%;
 	height: 100px;
 	background: #99dfe6;
-	position: fixed;
 	border-bottom: 2px solid #000000;
 	border-radius: 0 0 10px 10px;
-}
+	justify-content: space-between;
+	align-items: center;
+	display: flex;
+	z-index: 2;
+  }
 
 .navbar{
 	display: flex; /* Creating the box affect for navigation order */
@@ -29,9 +32,16 @@ header{
 }
 
 .logo img{
-	float: left;
     max-height: 100px;
-    max-width: 100%;
+    width: auto;
+}
+
+.title{
+	font-family: 'Boogaloo', cursive;
+	font-size: 20px;
+	flex-grow: 1;
+	text-shadow: 2px 2px 0 #000;
+	color: #f8db6e;
 }
 
 nav ul{
@@ -42,10 +52,7 @@ nav ul{
 }
 
 nav li{
-	margin-right: -15px;
-}
-#navLogin{
-	padding-right: 25px;
+	margin: 0 7px;
 }
 
 nav a{
@@ -54,7 +61,6 @@ nav a{
 	border: 2px solid #000000; /*Border around buttons*/
 	border-radius: 5px; /*Round corners*/
 	color: #000000; /*Font color on buttons*/
-	margin-right: 30px; /*How far buttons are from right*/
 	text-decoration: none; /*No underline*/
 	background-color: #f8db6e; /*button background color*/
 }
@@ -70,65 +76,70 @@ nav a.active{
 nav a:hover{
 	background-color: #ffe249; /*button color when mouse hovers over*/
 }
-.registrationDiv{
-	margin-top: 130px;
-	margin-left: 32.5%;
-	border-radius: 10px 10px 10px 10px;
-	font-size: 15px;
-	width: 30%;
-	padding: 25px;
-	background-color: white;
-	box-shadow: 15px 15px 20px 4px;
-	height: 50%;
-} 
-
-#registerFirstName, #registerLastName, #registerPhoneNum, #registerUsername, #registerPassword, #confirmPassword{
-	font-size: 20px;
+#registrationDiv {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 20px;
+    font-family: 'Boogaloo', cursive;
+    width: 40%;
+    padding: 20px;
+    margin-top: 15%;
+    margin-left: 28%;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
-input[type="text"], input[type="number"], input[type="password"]{
-	border-radius: 0px;
-	text-align: center;
-	width: 77%;
-	margin-left: 10%;
-	margin-bottom: 4%;
-	font-family: serif;
-    border-radius: 7px;
+#inner-title {
+    font-size: 200%;
+    color: darkgoldenrod;
+    margin-bottom: 5%;
 }
 
-.buttons{
-	font-size: 16px;
-	border-radius: 5px;
-	width: 77%;
-    height: 30px;
-	margin-top: 18px;
-	margin-left: 10%;
-    margin-bottom: 15px;
-	font-family: serif;
-	color: black;
-	background-color: lightcyan;
+/* Style for input fields */
+input[type="text"],
+input[type="password"] {
+    width: 70%;
+    padding: 10px;
+    margin: 4px auto;
+    border: 2px solid #000000;
+    border-radius: 5px;
 }
 
-#inner-title{
-	display: inline-block;
-	font-size: 25px;
-	width: 90%;
-	text-align: center;
-	margin-left: 5%;
-    margin-top: 20px;
-	margin-bottom: 10%;
-	font-family: initial;
-	color: darkturquoise;
+/* Style for the "Sign Up" button */
+#signUpButton {
+    width: 50%;
+    padding: 15px 20px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: lightskyblue;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.title{
-	font-family: 'Boogaloo', cursive;
-	font-size: 20px;
-	flex-grow: 1;
-	text-shadow: 2px 2px 0 #000;
-	color: #f8db6e;
+#signUpButton:hover {
+    background-color: #000000;
 }
 
-#YesAccount{
-    margin-left: 38px;
+/* Style for the "Already Have an Account" message */
+#YesAccount {
+    font-size: 18px;
+    margin: 10px auto;
+}
+
+/* Style for the registration result message */
+#registerResult {
+    font-weight: bold;
+    color: red;
+    margin: 10px auto;
+}
+/* Style for the error asterisks */
+.error-asterisk {
+	color: red;
+	font-size: 22px;
+	margin-left: 5px;
+	display: none; /* Initially hide the asterisks */
 }

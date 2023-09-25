@@ -1,128 +1,149 @@
 const urlBase = 'http://laughsender.com/LAMPAPI';
 const extension = 'php';
 
-
 function registerUser() {
     // Retrieve user input from the registration form
     let firstName = document.getElementById("registerFirstName").value;
     let lastName = document.getElementById("registerLastName").value;
     let login = document.getElementById("registerUsername").value;
     let password = document.getElementById("registerPassword").value;
-	let confirmpassword = document.getElementById("confirmPassword").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
 
-	document.getElementById("registerResult").innerHTML = "";
+    // Clear any previous error messages and asterisks
+    clearErrors();
 
     // Validate user input
+    let isValid = true;
+
     if (!isValidName(firstName)){
         document.getElementById("registerResult").innerHTML = "Invalid first name. Letters only.";
-        return;
+        displayErrorAsterisk("errorFirstName");
+        isValid = false;
     }
 
     if (!isValidName(lastName)) {
         document.getElementById("registerResult").innerHTML = "Invalid last name. Letters only.";
-        return;
+        displayErrorAsterisk("errorLastName");
+        isValid = false;
     }
-	
-	if(password !== confirmpassword){
-		document.getElementById("registerResult").innerHTML = "Password and Confirm Password do not match.";
-		return;
-	}
-	
+
+    if (password !== confirmPassword){
+        document.getElementById("registerResult").innerHTML = "Password and Confirm Password do not match.";
+        displayErrorAsterisk("errorPassword");
+        displayErrorAsterisk("errorConfirmPassword");
+        isValid = false;
+    }
+
     if (password.length < 8) {
-        document.getElementById("registerResult").innerHTML = "Password should be at least 8 characters long";;
-        return;
-    }	
-	
-	let hash = md5( password );
-	
-	//if the user is not available it will stop here
-	//if it is available, it will create the account
-	checkUserAvailable(login, function(userAvailable){
-		if(userAvailable){
-			createUser(firstName, lastName, login, hash, function(regResult){
-				if(regResult == "true"){
-					//after creating the account if there were no errors, a success message will be displayed
-					document.getElementById("registerResult").innerHTML = "The account has been successfully created! Redirecting to login...";
-					//after getting the success message it will wait a few seconds and redirect to the login page
-					setTimeout(function(){window.location.href = "/login.html";}, 3000);
-				}
-				else{
-					document.getElementById("registerResult").innerHTML = "Error: " + regResult;
-					return;
-				}
-			});
-		}
-		else{
-			document.getElementById("registerResult").innerHTML = "User has already been taken";
-			return;
-		}
-	});
-}	
+        document.getElementById("registerResult").innerHTML = "Password should be at least 8 characters long";
+        displayErrorAsterisk("errorPassword");
+        isValid = false;
+    }
 
+    if (isValid) {
+        // If all input is valid, continue with registration
+        let hash = md5(password);
 
-function checkUserAvailable(username, result) {
-	let data = {Login: username};
-	let jsonPayload = JSON.stringify(data);
-	
-	let url = urlBase + '/SearchUsers.' + extension;
-	let xhr = new XMLHttpRequest();
-	
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	
-	try{
-		xhr.onreadystatechange = function(){
-			if(this.readyState == 4 && this.status == 200){
-				let response = JSON.parse(xhr.responseText);
-				
-				if("Success" in response){
-					//username is taken
-					result(false);
-				}
-				else{
-					//username is available
-					result(true);
-				}	
-			}
-		};
-		xhr.send(jsonPayload);
-	}
-	catch(err){
-		document.getElementById("registerResult").innerHTML = err.message;
-	}
+        // Check if the user is available
+        checkUserAvailable(login, function(userAvailable){
+            if(userAvailable){
+                createUser(firstName, lastName, login, hash, function(regResult){
+                    if(regResult === "true"){
+                        // After creating the account with no errors, show a success message
+                        document.getElementById("registerResult").innerHTML = "The account has been successfully created! Redirecting to login...";
+                        // After displaying the success message, wait a few seconds and redirect to the login page
+                        setTimeout(function(){window.location.href = "/login.html";}, 3000);
+                    }
+                    else {
+                        document.getElementById("registerResult").innerHTML = "Error: " + regResult;
+                    }
+                });
+            }
+            else {
+                document.getElementById("registerResult").innerHTML = "User has already been taken";
+            }
+        });
+    }
 }
 
-function createUser(first, last, user, pass, result){
-	let data = {FirstName: first, LastName: last, Login: user, Password: pass};
-	let jsonPayload = JSON.stringify(data);
-	
-	let url = urlBase + '/RegisterUser.' + extension;
-	let xhr = new XMLHttpRequest();
-	
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	
-	try{
-		xhr.onreadystatechange = function(){
-			if(this.readyState == 4 && this.status == 200){
-				let response = JSON.parse(xhr.responseText);
-				
-				if("error" in response){
-					//registration failed
-					result("There was a problem when creating the account.");
-				}
-				else{
-					result("true");
-				}
-			}
-		};
-		xhr.send(jsonPayload);
-	}
-	catch(err){
-		document.getElementById("registerResult").innerHTML = err.message;
-	}
+function checkUserAvailable(username, result) {
+    let data = {Login: username};
+    let jsonPayload = JSON.stringify(data);
+
+    let url = urlBase + '/SearchUsers.' + extension;
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+    try {
+        xhr.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                let response = JSON.parse(xhr.responseText);
+
+                if("Success" in response){
+                    // Username is taken
+                    result(false);
+                }
+                else{
+                    // Username is available
+                    result(true);
+                }
+            }
+        };
+        xhr.send(jsonPayload);
+    }
+    catch(err){
+        document.getElementById("registerResult").innerHTML = err.message;
+    }
+}
+
+function createUser(first, last, user, pass, result) {
+    let data = {FirstName: first, LastName: last, Login: user, Password: pass};
+    let jsonPayload = JSON.stringify(data);
+
+    let url = urlBase + '/RegisterUser.' + extension;
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+    try {
+        xhr.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                let response = JSON.parse(xhr.responseText);
+
+                if("error" in response){
+                    // Registration failed
+                    result("There was a problem when creating the account.");
+                }
+                else{
+                    result("true");
+                }
+            }
+        };
+        xhr.send(jsonPayload);
+    }
+    catch(err){
+        document.getElementById("registerResult").innerHTML = err.message;
+    }
 }
 
 function isValidName(name) {
     return /^[A-Za-z]+$/.test(name);
+}
+
+function displayErrorAsterisk(elementId) {
+    document.getElementById(elementId).style.display = "inline";
+}
+
+function clearErrors() {
+    // Clear any error messages
+    document.getElementById("registerResult").innerHTML = "";
+
+    // Hide all error asterisks
+    let errorAsterisks = document.querySelectorAll(".error-asterisk");
+    errorAsterisks.forEach(function(asterisk) {
+        asterisk.style.display = "none";
+    });
 }
