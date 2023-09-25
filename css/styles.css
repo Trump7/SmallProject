@@ -150,7 +150,7 @@ nav a:hover{
 .search-box{
 	display: flex;
 	align-items: center;
-	width: 60%;
+	width: 80%;
 }
 
 .search-box input[type="text"]{
@@ -165,7 +165,7 @@ nav a:hover{
 	width: 100%;
 	font-family: Boogaloo;
 	font-size: 22px;
-	margin-top: 10px;
+	align-items: center;
 }
 
 /* Add Box */
