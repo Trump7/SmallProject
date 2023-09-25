@@ -173,3 +173,7 @@ input[type="password"] {
 #NoAccount{
 	margin-bottom: 4%;
 }
+.error-message {
+    color: red;
+    text-align: center;
+}
