@@ -98,7 +98,7 @@ nav a:hover{
     color: darkgoldenrod;
     margin-bottom: 5%;
 }
-#firstName, #lastName, #Username{
+#FirstName, #LastName, #Username{
 	font-size: 20px;
     margin-left: -55%;
 }
@@ -147,7 +147,6 @@ input[type="password"] {
 
 /* Style for the registration result message */
 .registerResults {
-    
     color: red;
 }
 .input-container {
