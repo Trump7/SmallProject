@@ -1,8 +1,7 @@
 <html>
 <head>
 	<script type="text/javascript" src="js/md5.js"></script>
-	<script type="text/javascript" src="js/registration.js"></script>
-    <link href="css/styles.css" rel="stylesheet">	
+	<script type="text/javascript" src="js/registration.js"></script>	
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap">
 	<link rel="stylesheet" href="css/registration.css">
@@ -35,34 +34,39 @@
             <input type="text" id="registerFirstName" placeholder="Ex. John" />
             <span class="error-asterisk" id="errorFirstName">*</span>
         </div>
+		<span class="registerResults" id="firstResult"></span>
         
         <label id="LastName" for="registerLastName">Last Name</label>
         <div class="input-container">
             <input type="text" id="registerLastName" placeholder="Ex. Doe" />
             <span class="error-asterisk" id="errorLastName">*</span>
         </div>
-        
+        <span class="registerResults" id="lastResult"></span>
+		
         <label id="Username" for="registerUsername">Username</label>
         <div class="input-container">
             <input type="text" id="registerUsername" placeholder="Ex. John101" />
             <span class="error-asterisk" id="errorUsername">*</span>
         </div>
-        
+        <span class="registerResults" id="userResult"></span>
+		
         <label id="Password" for="registerPassword">Password</label>
         <div class="input-container">
             <input type="password" id="registerPassword" placeholder="Ex. jdoe#2023" />
             <span class="error-asterisk" id="errorPassword">*</span>
         </div>
-        
+        <span class="registerResults" id="passResult"></span>
+		
         <label id="PasswordAgain" for="confirmPassword">Confirm Password</label>
         <div class="input-container">
             <input type="password" id="confirmPassword" placeholder="Ex. jdoe#2023" />
             <span class="error-asterisk" id="errorConfirmPassword">*</span>
         </div>
+		<span class="registerResults" id="confirmResult"></span>
 
         <button type="button" id="signUpButton" class="buttons" onclick="registerUser()">Sign Up</button>
         <span id="YesAccount">Already Have an Account? <a href="login.html">Log In</a></span>
-        <span id="registerResult"></span>
+        <span class="registerResults" id="registerResult"></span>
     </div>
 
 </body>

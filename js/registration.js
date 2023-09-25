@@ -16,27 +16,34 @@ function registerUser() {
     let isValid = true;
 
     if (!isValidName(firstName)){
-        document.getElementById("registerResult").innerHTML = "Invalid first name. Letters only.";
+        document.getElementById("firstResult").innerHTML = "*Invalid first name. Letters only.";
         displayErrorAsterisk("errorFirstName");
         isValid = false;
     }
 
     if (!isValidName(lastName)) {
-        document.getElementById("registerResult").innerHTML = "Invalid last name. Letters only.";
+        document.getElementById("lastResult").innerHTML = "*Invalid last name. Letters only.";
         displayErrorAsterisk("errorLastName");
         isValid = false;
     }
+	
+	if(login == ''){
+		document.getElementById("userResult").innerHTML = "*Username must be present";
+		displayErrorAsterisk("errorUsername");
+		isValid = false;
+	}
 
     if (password !== confirmPassword){
-        document.getElementById("registerResult").innerHTML = "Password and Confirm Password do not match.";
+        document.getElementById("confirmResult").innerHTML = "*Password and Confirm Password do not match.";
         displayErrorAsterisk("errorPassword");
         displayErrorAsterisk("errorConfirmPassword");
         isValid = false;
     }
 
     if (password.length < 8) {
-        document.getElementById("registerResult").innerHTML = "Password should be at least 8 characters long";
+        document.getElementById("passResult").innerHTML = "*Password should be at least 8 characters long";
         displayErrorAsterisk("errorPassword");
+		displayErrorAsterisk("errorConfirmPassword");
         isValid = false;
     }
 
@@ -133,13 +140,20 @@ function isValidName(name) {
     return /^[A-Za-z]+$/.test(name);
 }
 
+
+
 function displayErrorAsterisk(elementId) {
     document.getElementById(elementId).style.display = "inline";
 }
 
 function clearErrors() {
     // Clear any error messages
-    document.getElementById("registerResult").innerHTML = "";
+    document.getElementById("firstResult").innerHTML = "";
+	document.getElementById("lastResult").innerHTML = "";
+	document.getElementById("userResult").innerHTML = "";
+	document.getElementById("passResult").innerHTML = "";
+	document.getElementById("confirmResult").innerHTML = "";
+	document.getElementById("registerResult").innerHTML = "";
 
     // Hide all error asterisks
     let errorAsterisks = document.querySelectorAll(".error-asterisk");
