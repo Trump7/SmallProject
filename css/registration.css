@@ -96,6 +96,14 @@ nav a:hover{
     color: darkgoldenrod;
     margin-bottom: 5%;
 }
+#firstName, #lastName, #Username, #Password{
+	font-size: 20px;
+    margin-left: -55%;
+}
+#PasswordAgain{
+	font-size: 20px;
+    margin-left: -43%;
+}
 
 /* Style for input fields */
 input[type="text"],

@@ -30,19 +30,24 @@
 
     <div class="registrationDiv" id="registrationDiv">
         <span id="inner-title">CREATE AN ACCOUNT</span>
-        <input type="text" id="registerFirstName" placeholder="First Name" />
+        <label id="firstName">First Name</label>
+        <input type="text" id="registerFirstName" placeholder="Ex. John" />
         <span class="error-asterisk" id="errorFirstName">*</span><br />
 
-        <input type="text" id="registerLastName" placeholder="Last Name" />
+        <label id="lastName">Last Name</label>
+        <input type="text" id="registerLastName" placeholder="Ex. Doe" />
         <span class="error-asterisk" id="errorLastName">*</span><br />
 
-        <input type="text" id="registerUsername" placeholder="Username" />
+        <label id="Username">Username</label>
+        <input type="text" id="registerUsername" placeholder="Ex. John101" />
         <span class="error-asterisk" id="errorUsername">*</span><br />
 
-        <input type="password" id="registerPassword" placeholder="Password" />
+        <label id="Password">Password</label>
+        <input type="password" id="registerPassword" placeholder="Ex. jdoe#2023" />
         <span class="error-asterisk" id="errorPassword">*</span><br />
 
-        <input type="password" id="confirmPassword" placeholder="Confirm Password" />
+        <label id="PasswordAgain">Confirm Password</label>
+        <input type="password" id="confirmPassword" placeholder="Ex. jdoe#2023" />
         <span class="error-asterisk" id="errorConfirmPassword">*</span><br />
 
         <button type="button" id="signUpButton" class="buttons" onclick="registerUser()">Sign Up</button>
