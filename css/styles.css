@@ -131,7 +131,7 @@ nav a:hover{
     padding: 20px;
     width: 80%;
 	max-width: 1200px;
-	min-width: 600px;
+	min-width: 1000px;
     margin: 20px auto;
 }
 
@@ -159,6 +159,12 @@ nav a:hover{
 	border-radius: 5px;
 }
 
+/*Joke Box*/
+.jokes-box{
+	display: flex;
+	width: 100%;
+}
+
 /* Add Box */
 .add-box {
 	display: flex;
@@ -178,12 +184,7 @@ nav a:hover{
 	background-color: #ffe249;
 }
 
-/*Joke Box*/
-.jokes-box{
-	display: flex;
-	width: 100%;
-	margin-bottom: 10px;
-}
+
 
 /* Add Form */
 .add-contacts-window{
