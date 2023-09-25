@@ -84,11 +84,13 @@ nav a:hover{
     font-family: 'Boogaloo', cursive;
     width: 40%;
     padding: 20px;
-    margin-top: 15%;
-    margin-left: 28%;
+    margin: 0 auto;
+    top: 175px;
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     position: relative;
+	min-width: 520px;
+	max-width: 620px;
 }
 
 #inner-title {
