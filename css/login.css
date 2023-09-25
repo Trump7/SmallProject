@@ -116,17 +116,20 @@ input[type="text"]{
     margin-top: 10%;
     width: 69%;
     padding: 10px;
-    margin: 15px auto;
+    margin: 21px auto;
     border: 2px solid #000000;
     border-radius: 5px;
 }
 input[type="password"] {
     margin-top: 10%;
-    width: 70%;
+    width: 69%;
     padding: 10px;
     margin: 15px auto;
     border: 2px solid #000000;
     border-radius: 5px;
+}
+#Password{
+    margin-left: 1%;
 }
 
 #RememberMeChckBox {
@@ -137,7 +140,7 @@ input[type="password"] {
 #loginButton {
     width: 40%;
     padding: 15px 20px;
-    margin: 21px auto;
+    margin:15px auto;
     border: none;
     border-radius: 5px;
     color: #fff;
