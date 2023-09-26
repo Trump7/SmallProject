@@ -172,7 +172,7 @@ input[type="password"] {
     font-family: 'Boogaloo', cursive;
     width: 45%;
     padding: 2.5%;
-    background-color: rgba(173, 216, 230, 0.9);
+    background-color: rgba(153, 223, 230, 0.9);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     position: relative;
 }

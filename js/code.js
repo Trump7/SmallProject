@@ -185,6 +185,14 @@ function loadContacts(){
 					
 					document.getElementById("contacts-contents").innerHTML = tableVals;
 				}
+				else{
+					let tableVals = '';
+					
+					tableVals += '<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>';
+					document.getElementById("contacts-contents").innerHTML = tableVals;
+					
+					document.getElementById("no-contacts-message").style.display = "block";
+				}
 			}
 		};
 		xhr.send(jsonPayload);
