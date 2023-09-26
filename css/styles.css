@@ -142,9 +142,10 @@ nav a:hover{
 	margin-bottom: 10px;
 }
 
-#contacts{
-	max-height: 500px;
-	overflow-y: auto;
+#contacts-contents{
+    height: 400px;
+    overflow-y: auto;
+    display: block;
 }
 
 /*Search Box*/
