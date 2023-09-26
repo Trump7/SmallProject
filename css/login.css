@@ -78,20 +78,32 @@ nav a:hover{
 }
 
 #container-wrapper {
-	margin-top: 12.5%; /* 10% from the top */
+  margin-top: 12.5%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-#container{
+#container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* Align items at the top of the container */
-  margin: 0 10%; /* Adjust the margin as needed */
+  justify-content: center;
+  align-items: stretch;
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 #loginDiv,
 #welcomeBackDiv {
-  flex: 1; /* Make both divs grow to fill available space */
-  margin: 0 1%; /* Create a 2% space between divs */
+  flex: 1;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  box-sizing: border-box;
+  min-width: calc(50% - 5px); 
+  max-width: calc(50% - 5px);
+  margin: 0 5px;
 }
 
 #loginDiv{
@@ -109,7 +121,7 @@ nav a:hover{
 
 #inner-title {
     font-size: 170%;
-    color:darkgoldenrod;
+    color:black;
 }
 /* Style for input fields */
 input[type="text"]{
@@ -133,7 +145,7 @@ input[type="password"] {
 }
 
 #RememberMeChckBox {
-    margin-left: -29%;
+    /margin-left: -29%;
 }
 
 /* Style for the "Login" button */
@@ -144,7 +156,7 @@ input[type="password"] {
     border: none;
     border-radius: 5px;
     color: #fff;
-    background-color: lightskyblue;
+    background-color: #99dfe6;
     cursor: pointer;
     font-weight: bold;
 }
@@ -153,7 +165,7 @@ input[type="password"] {
     background-color: #000000;
 }
 #welcomeBackDiv {
-	background-color: lightskyblue;
+	background-color: #99dfe6;
     text-align: center;
     border-radius: 20px;
     font-size: 20px;
@@ -170,8 +182,9 @@ input[type="password"] {
 	margin-bottom: 7%;
 }
 #WelcomeMessage{
-	font-size: xxx-large;
+	font-size: 50px;
 	margin-bottom: 9.5%;
+	margin-top: 5%;
 }
 #NoAccount{
 	margin-bottom: 4%;
