@@ -37,8 +37,9 @@ function checkAuth() {
 			//show confetti
 			confettiL.style.display = "block";
 			confettiR.style.display = "block";
-			//remove confetti in 4 seconds
-			//setTimeout(function(){confetti.style.display = "none";}, 4000);
+			document.getElementById("welcome-text").style.display = "block";
+			//remove confetti in 8 seconds
+			//setTimeout(function(){confetti.style.display = "none";}, 8000);
 		}
 	}
 	else{
