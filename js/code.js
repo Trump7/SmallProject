@@ -204,16 +204,7 @@ function loadContacts(){
 					
 					document.getElementById("contacts-contents").innerHTML = tableVals;
 				}
-				else{
-					let tableVals = '';
-					
-					// Add 6 blank rows
-					for (let i = 0; i < 6; i++) { 
-                        tableVals += '<tr class="blank-row"><td></td><td></td><td></td><td></td></tr>';
-                    }
-					
-					document.getElementById("contacts-contents").innerHTML = tableVals;
-					
+				else{				
 					document.getElementById("no-contacts-message").style.display = "block";
 				}
 			}
