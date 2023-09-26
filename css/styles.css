@@ -482,9 +482,8 @@ td:last-child, th:last-child{
 }
 
 #welcome-text span{
-	text-shadow: 8px 8px 16px #000; /* Add a shadow effect to the text */
-    border: 2px solid #000; /* Add a border to the text */
-    padding: 10px;
+	text-shadow: 10px 10px 0 #000;
+	-webkit-text-stroke: 1px black;
 	color: #f8db6e;
 }
 
