@@ -142,7 +142,7 @@ nav a:hover{
 	margin-bottom: 10px;
 }
 
-#contacts-contents{
+#scrollable-body{
     height: 400px;
     overflow-y: auto;
     display: block;
