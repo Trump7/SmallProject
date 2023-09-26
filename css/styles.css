@@ -410,12 +410,22 @@ td:last-child, th:last-child{
 }
 
 /* Style for the "No contacts" message */
-.message-container {
-    text-align: center; /* Center-align the text in the message div */
-    margin-top: 20px; /* Add some space above the message */
+#message-container {
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	top: 250px;
+	left: 0;
+	right: 0;
 }
 
-.message-container img {
-    display: block; /* Center-align the GIF */
-    margin: 0 auto; /* Center-align the GIF horizontally */
+#message-container img {
+    width: 20%;
+}
+
+#message-container p{
+	font-family: Boogaloo;
+	font-size: 30px;
+	margin-top: -20px;
 }

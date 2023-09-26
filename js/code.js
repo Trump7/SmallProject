@@ -190,6 +190,13 @@ function loadContacts(){
 				else{
 					let tableVals = '';
 					
+					// Add 6 blank rows
+					for (let i = 0; i < 6; i++) { 
+                        tableVals += '<tr><td></td><td></td><td></td><td></td></tr>';
+                    }
+					
+					document.getElementById("contacts-contents").innerHTML = tableVals;
+					
 					document.getElementById("no-contacts-message").style.display = "block";
 				}
 			}
