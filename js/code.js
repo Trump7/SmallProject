@@ -276,8 +276,8 @@ function deleteContact(index){
 			
 				if("success" in response){
 					document.getElementById('delete-warning').innerHTML = "Contact Deleted";
-					loadContacts();
 					setTimeout(function(){closeDeleteContact();}, 1500);
+					loadContacts();
 				}
 				else{
 					document.getElementById('delete-warning').innerHTML = "Error: Could not delete Contact";
