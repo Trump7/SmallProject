@@ -145,7 +145,6 @@ nav a:hover{
 #scrollable-body{
     height: 400px;
     overflow-y: auto;
-    display: block;
 }
 
 /*Search Box*/
@@ -376,6 +375,11 @@ nav a:hover{
 
 
 /*Contacts table*/
+#contacts, #contacts-body{
+	width: 100%;
+}
+
+
 table{
 	font-family: Arial;
 	border-collapse: collapse;
