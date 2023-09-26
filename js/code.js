@@ -32,9 +32,11 @@ function checkAuth() {
 		//confetti for lienecker
 		if(userId == 4 && document.referrer.endsWith("login.html")){
 			
-			const confetti = document.getElementById("confetti-container");
+			const confettiL = document.getElementById("confetti-left");
+			const confettiR = document.getElementById("confetti-right");
 			//show confetti
-			confetti.style.display = "block";
+			confettiL.style.display = "block";
+			confettiR.style.display = "block";
 			//remove confetti in 4 seconds
 			//setTimeout(function(){confetti.style.display = "none";}, 4000);
 		}

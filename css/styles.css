@@ -436,7 +436,7 @@ td:last-child, th:last-child{
 }
 
 /* Style for confetti */
-#confetti-container {
+#confetti-left {
     display: none;
     position: fixed;
     top: 0;
@@ -444,4 +444,23 @@ td:last-child, th:last-child{
     width: 100%;
     height: 100%;
     z-index: 9999; /* Ensure the confetti appears on top of other elements */
+}
+
+#confetti-image-left{
+	width:69%;
+}
+
+#confetti-right {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Ensure the confetti appears on top of other elements */
+}
+
+#confetti-image-right{
+	width:69%;
+	transform: scaleX(-1);
 }
