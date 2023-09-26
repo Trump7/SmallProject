@@ -434,3 +434,14 @@ td:last-child, th:last-child{
 #contacts-contents tr.blank-row td{
 	padding: 30px;
 }
+
+/* Style for confetti */
+#confetti-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Ensure the confetti appears on top of other elements */
+}

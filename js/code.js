@@ -28,6 +28,16 @@ function checkAuth() {
 		if(window.location.href.endsWith("login.html") || window.location.href.endsWith("register.html")){
 			window.location.href = "color.html"
 		}
+		
+		//confetti for lienecker
+		if(userId == 4 && document.referrer.endsWith("login.html")){
+			
+			const confetti = document.getElementById("confetti-container");
+			//show confetti
+			confetti.style.display = "block";
+			//remove confetti in 4 seconds
+			setTimeout(function(){confetti.style.display = "none";}, 4000);
+		}
 	}
 	else{
 		loginButt.style.display = "block";
@@ -276,8 +286,7 @@ function deleteContact(index){
 			
 				if("success" in response){
 					document.getElementById('delete-warning').innerHTML = "Contact Deleted";
-					setTimeout(function(){closeDeleteContact();}, 1500);
-					loadContacts();
+					setTimeout(function(){closeDeleteContact(); loadContacts();}, 1500);
 				}
 				else{
 					document.getElementById('delete-warning').innerHTML = "Error: Could not delete Contact";
