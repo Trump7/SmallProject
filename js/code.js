@@ -12,8 +12,6 @@ function checkAuth() {
 	const isAuthenticated = userId > 0;
 	
 	const loginButt = document.getElementById("loginButt");
-	//const logoutButt = document.getElementById("logoutButt");
-	//const userNamePrompt = document.getElementById("userNamePrompt");
 	const manButt = document.getElementById("manButt");
 	const dropdown = document.getElementById("userDropdown");
 	//const userName = document.getElementById("userName");
@@ -25,16 +23,15 @@ function checkAuth() {
 	if(isAuthenticated){
 		loginButt.style.display = "none";
 		dropdown.style.display = "block";
-		//logoutButt.style.display = "block";
-		//userNamePrompt.style.display = "block";
 		manButt.style.display = "block";
 		//userName.innerHTML = "Logged in as<br>" + firstName + " " + lastName;
+		if(window.location.href.endsWith("login.html") || window.location.href.endsWith("register.html")){
+			window.location.href = "color.html"
+		}
 	}
 	else{
 		loginButt.style.display = "block";
 		dropdown.style.display = "none";
-		//logoutButt.style.display = "none";
-		//userNamePrompt.style.display = "none";
 		manButt.style.display = "none";
 		
 		if(window.location.href.endsWith("color.html")){
@@ -93,10 +90,21 @@ function doLogin() {
 //part of log in script
 function saveCookie()
 {
-	let minutes = 20;
-	let date = new Date();
-	date.setTime(date.getTime()+(minutes*60*1000));	
-	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+	let rememberMe = document.getElementById("memCheckBox")
+	
+	//if checkbox is checked, let user stay logged in for a long time
+	if(rememberMe.checked){
+		let minutes = 60;
+		let date = new Date();
+		date.setTime(date.getTime()+(minutes*60*1000));	
+		document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+	}
+	else{ //if not checked, let user stay logged in for 10 min
+		let minutes = 10;
+		let date = new Date();
+		date.setTime(date.getTime()+(minutes*60*1000));	
+		document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+	}
 }
 
 //get user data is read cookie with returning the data
