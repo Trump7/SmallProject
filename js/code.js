@@ -36,7 +36,7 @@ function checkAuth() {
 			//show confetti
 			confetti.style.display = "block";
 			//remove confetti in 4 seconds
-			setTimeout(function(){confetti.style.display = "none";}, 4000);
+			//setTimeout(function(){confetti.style.display = "none";}, 4000);
 		}
 	}
 	else{
