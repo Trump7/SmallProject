@@ -192,7 +192,7 @@ function loadContacts(){
 					
 					// Add 6 blank rows
 					for (let i = 0; i < 6; i++) { 
-                        tableVals += '<tr><td></td><td></td><td></td><td></td></tr>';
+                        tableVals += '<tr class="blank-row"><td></td><td></td><td></td><td></td></tr>';
                     }
 					
 					document.getElementById("contacts-contents").innerHTML = tableVals;
