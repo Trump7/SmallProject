@@ -39,7 +39,11 @@ function checkAuth() {
 			confettiR.style.display = "block";
 			document.getElementById("welcome-text").style.display = "block";
 			//remove confetti in 8 seconds
-			//setTimeout(function(){confetti.style.display = "none";}, 8000);
+			setTimeout(function(){
+				confettiL.style.display = "none";
+				confettiR.style.display = "none";
+				document.getElementById("welcome-text").style.display = "none";
+				}, 8000);
 		}
 	}
 	else{

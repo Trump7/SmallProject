@@ -478,10 +478,14 @@ td:last-child, th:last-child{
     transform: translateY(-50%);
     z-index: 9999;
     display: none;
-	color: #f8db6e;
-	text-shadow: 8px 8px 16px #000;
-    padding: 10px;
 	animation: slideIn 4s ease forwards;
+}
+
+#welcome-text span{
+	text-shadow: 8px 8px 16px #000; /* Add a shadow effect to the text */
+    border: 2px solid #000; /* Add a border to the text */
+    padding: 10px;
+	color: #f8db6e;
 }
 
 @keyframes slideIn {
