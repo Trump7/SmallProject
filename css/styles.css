@@ -410,12 +410,12 @@ td:last-child, th:last-child{
 }
 
 /* Style for the "No contacts" message */
-#no-contacts-message {
+.message-container {
     text-align: center; /* Center-align the text in the message div */
     margin-top: 20px; /* Add some space above the message */
 }
 
-#no-contacts-message img {
+.message-container img {
     display: block; /* Center-align the GIF */
     margin: 0 auto; /* Center-align the GIF horizontally */
 }

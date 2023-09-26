@@ -169,6 +169,8 @@ function loadContacts(){
 				let response = JSON.parse(xhr.responseText);
 				
 				if("results" in response){
+					document.getElementById("no-contacts-message").style.display = "none";
+					
 					let tableVals = '';
 					
 					for(let i = 0; i < response.results.length; i++){
@@ -187,9 +189,6 @@ function loadContacts(){
 				}
 				else{
 					let tableVals = '';
-					
-					tableVals += '<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>';
-					document.getElementById("contacts-contents").innerHTML = tableVals;
 					
 					document.getElementById("no-contacts-message").style.display = "block";
 				}
