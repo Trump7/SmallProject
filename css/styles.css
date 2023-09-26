@@ -145,6 +145,7 @@ nav a:hover{
 #scrollable-body{
     height: 400px;
     overflow-y: auto;
+	width: 100%;
 }
 
 /*Search Box*/
